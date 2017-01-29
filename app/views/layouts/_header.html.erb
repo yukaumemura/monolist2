@@ -17,6 +17,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <% unless logged_in? %>
+              <li><%= link_to "yuka-umemura", '#' %></li>
               <li><%= link_to "新規登録", signup_path %></li>
               <li><%= link_to "ログイン", login_path %></li>
             <% else %>
