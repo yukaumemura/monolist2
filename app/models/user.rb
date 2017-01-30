@@ -13,8 +13,18 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :followed_relationships, source: :follower
 
   has_many :ownerships , foreign_key: "user_id", dependent: :destroy
-  has_many :items ,through: :ownerships
-
+  has_many :items, through: :ownerships
+  
+  #has_many :wantsではclass_name: "Want"を指定することで、ownershipsテーブルからtypeがWantであるものを取得
+  #このことにより、has_many :want_itemsで、wantしたアイテムの一覧を取得することができます。
+  has_many :wants, class_name: "Want", foreign_key: "user_id", dependent: :destroy
+  has_many :want_items , through: :wants, source: :item
+  
+  #ownershipsテーブルからtypeがHaveであるものの一覧がhaves
+  #Haveしたアイテムの一覧がhave_itemsで取得
+  #(意味)source: :item⇒through: :havesで指定した参照先のクラスHaveに宣言されているbelongs_to :itemのitemを取得する
+  has_many :haves, class_name: "Have", foreign_key: "user_id", dependent: :destroy
+  has_many :have_items , through: :haves, source: :item
 
   # 他のユーザーをフォローする
   def follow(other_user)
@@ -30,21 +40,32 @@ class User < ActiveRecord::Base
   end
 
   ## TODO 実装
+  # ユーザーがこのアイテムをhaveにする
   def have(item)
+    haves.find_or_create_by(item_id: item.id)
+  end
+  
+  # ユーザーがアイテムをunhaveにする
+  def unhave(item) #itemをwantしている場合true、wantしていない場合falseを返す。
+    have = haves.find_by(item_id: item.id)
+    have.destroy if have != nil
+  end
+  
+  # あるユーザーアイテムをhaveしたかどうか
+  def have?(item) #itemのwantを解除する。
+    have_items.include?(item)
+  end
+  
+  def want(item) #itemをwantする。
+    wants.find_or_create_by(item_id: item.id)
   end
 
-  def unhave(item)
+  def unwant(item) #itemをunwantにする
+    want =  wants.find_by(item_id: item.id)
+    want.destroy if want != nil
   end
 
-  def have?(item)
-  end
-
-  def want(item)
-  end
-
-  def unwant(item)
-  end
-
-  def want?(item)
+  def want?(item) #ユーザーがitemをwantしてるか？
+    want_items.include?(item)
   end
 end
