@@ -11,23 +11,28 @@
 
 <%= render 'items/list' , items: @items %>
 
-<h2>課題：アイテム追加画面の実装</h2>
-<table>
+<div class="panel panel-default">
+  <div class="panel-heading">レッスン8</div>
+  <div class="panel-body">課題：アイテム追加画面の実装</div>
+  <table class="table">
 	<tbody>
 		<tr>
 			<th>番号</th>
+			<th>項目</th>
 			<th>内容</th>
 			<th>備考</th>
 			<th>コマンド</th>
 		</tr>
 		<tr>
 			<td>１</td>
+			<td>課題内容</td>
 			<td>app/views/items/_items.html.erb を編集して、アイテムを追加するための画面を実装</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>２</td>
+			<td>課題内容</td>
 			<td>初期状態で /items/new にアクセス(ログインが必要)すると検索画面が表示され、
 			<br>検索ワードを入力し検索を行うと楽天市場の検索結果を表示</td>
 			<td>参考：デモサイト</td>
@@ -35,75 +40,69 @@
 		</tr>
 		<tr>
 			<td>3</td>
-			<td>app/controllers/items_controller.rb 内に既にコードが記述されていますが、必要に応じて編集</td>
+			<td>課題内容</td>
+			<td>app/controllers/items_controller.rb 内に既にコードが記述されているが、必要に応じて編集</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>4</td>
+			<td>ユーザーパスワード</td>
 			<td>ログインは下記アカウントをお使いください。</td>
 			<td>ユーザー:guest@techacademy.jp<br>パスワード:guestpass</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>5</td>
+			<td>チェックポイント</td>
 			<td>rakuten_web_serviceの初期化の設定が正しく行えているか</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>6</td>
+			<td>チェックポイント</td>
 			<td>楽天市場のアイテムを取得し一覧を表示できているか</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
+			<td>7</td>
+			<td>（LargeImage）</td>
+			<td>楽天APIではLargeImageを直接取得不可⇒mediumImageから元画像を取得。<br>
+                 今回はruby文字列操作関数であるgsubを使用して<br>mediumImageの末尾?_ex=128x128を削除処理を加えることでLargeImageとする。</td>
 			<td></td>
+			<td>item['mediumImageUrls'].first['imageUrl'].gsub('?_ex=128x128', '')</td>
+		</tr>
+		<tr>
 			<td></td>
+			<td>(URL確認)<br>mediumImage</td>
+			<td>http://thumbnail.image.rakuten.co.jp/...jpg?_ex=128x128のように末尾に?_ex=128x128があり、<br>
+			これが画像を128pxのmediumな大きさにしてる。</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
+			<td>8</td>
+			<td>提出方法</td>
+			<td>ブランチ rakuten_items を作成して作業を行い、そのブランチを提出</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
+			<td>9</td>
+			<td>注意事項</td>
+			<td>課題提出後はmasterブランチに戻って作業すること</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
+			<td>10</td>
+			<td>注意事項</td>
+			<td>レビュー合格後はrakuten_itemsブランチをmasterブランチにマージすること</td>
 			<td></td>
 			<td></td>
 		</tr>
 	</tbody>
 </table>
+</div>
