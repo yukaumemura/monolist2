@@ -1,2 +1,2 @@
-class Want < ActiveRecord::Base
+class Want < Ownership
 end
