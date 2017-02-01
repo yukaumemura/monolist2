@@ -14,132 +14,123 @@
 <div class="col-sm-11">
 <div class="panel panel-danger">
   <div class="panel-heading">レッスン8</div>
-  <div class="panel-body">課題：「Have」「Want」ボタンの実装</div>
+  <div class="panel-body">課題：アイテムページとユーザーページの実装</div>
   <table class="table table-bordered">
 	<tbody>
 		<tr class="active">
 			<th>番号</th>
 			<th>項目</th>
+			<th>制作エリア</th>
 			<th>内容</th>
-			<th>備考</th>
-			<th>コマンド</th>
+			<th>備考/コマンド</th>
 		</tr>
 		<tr>
 			<td>１</td>
-			<td>課題内容</td>
-			<td>検索したアイテムを自分の「持っている」「欲しい」ものを登録する「Have」「Want」ボタンを実装</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>２</td>
-			<td>課題内容</td>
-			<td>楽天市場の商品はそれぞれitemCodeという値を持っています。</td>
-			<td></td>
+			<td>課題制作</td>
+			<td>ユーザページ</td>
+			<td>下記を作成<br>
+			ユーザーのプロフィール情報<br>
+			「Have」「Want」したアイテム一覧を表示するユーザーページを作成</td>
 			<td></td>
 		</tr>
 		<tr>
+			<td>2</td>
+			<td>課題制作</td>
+			<td>ユーザページプロフィール</td>
+			<td>下記の項目を表示
+			<ol>
+				<li>名前</li>
+				<li>Followingの数</li>
+				<li>Followersの数</li>
+				<li>Wantした数</li>
+				<li>Followersの数</li>
+				<li>Haveした数</li>
+				</ol>
+			</td>
+			<td></td>
+		</tr>
+	      <tr>
 			<td>3</td>
-			<td>課題内容</td>
-			<td>アイテム追加画面(items/new)で「Have」「Want」ボタンが押された場合、<br>
-			itemCodeをもとにデータベースに保存されているか確認し、<br>
-			存在しない場合はgem rakuten_web_serviceを用いて、<br>
-			アイテム一つあたりの情報を1アイテムとしてDB登録</td>
-			<td>参考：https://mono-list2.herokuapp.com/</td>
+			<td>課題制作</td>
+			<td>アイテムページ</td>
+			<td>データベースに登録されているアイテムの詳細を表示するページ<br>
+			<ol>
+				<li>アイテムのタイトルと画像を表示し、楽天市場の詳細ページへのリンクを貼る</li>
+				<li>「Have」したユーザー一覧、「Want」したユーザー一覧を表示</li>
+				<li>各ユーザーにはそれぞれのユーザーページへのリンク貼る</li>
+				</ol>
+			</td>
+			<td>参考
+			　<ol>
+				<li>https://mono-list2.herokuapp.com/users/2</li>
+				<li> https://mono-list2.herokuapp.com/items/2</li>
+				</ol>
+			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>4</td>
-			<td>ユーザーパスワード</td>
-			<td>ログインは下記アカウントをお使いください。</td>
-			<td>ユーザー:guest@techacademy.jp<br>パスワード:guestpass</td>
+			<td>チェックポイント</td>
+			<td>アイテムページ</td>
+			<td>
+				<ol>
+					<li>アイテムのタイトル・画像が適切に表示</li>
+					<li>アイテムの楽天市場へのリンクが貼られていること</li>
+					<li>アイテムを「Have」「Want」したユーザーのアイコン一覧をそれぞれ表示</li>
+					<li>表示されたユーザーアイコンには各ユーザーページのリンクが貼ってあること</li>
+					<li>metaタグが適切に設定されていること( content_forを用いること)
+						<ul>
+							<li>※ 各ページでユニークなtitle,descriptionになるようにしてください</li>
+							<li>（例）title: [アイテム名] - monolist</li>
+							<li>(例）description: [アイテム名]に関する情報。<br>
+							　　この商品を欲しい人、持ってる人を表示</li>
+						</ul>
+				</ol>
+			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>5</td>
 			<td>チェックポイント</td>
-			<td>アイテム追加画面（/items/new）より、<br>
-			「Have」「Want」ボタンを押した時に楽天市場のアイテム情報をDB保存できているか</td>
-			<td></td>
+			<td>ユーザーページ</td>
+			<td>
+			  <ol>
+				<li>ユーザーのプロフィール情報が正しく表示
+				  <ul>
+					<li>Followingの数</li>
+							<li>Followersの数</li>
+							<li>Wantした数</li>
+						</ul>
+					</li>
+					<li>「Have」「Want」ボタンが正常に動作すること</li>
+					<li>Followボタンが正常に動作すること</li>
+					<li>metaタグが適切に設定されていること( content_forを用いること)
+					  <ul>
+						<li>title: [ユーザ名] - monolist</li>
+					    (例）description: [ユーザ名]のモノページ。<br>
+							　[ユーザー名]の欲しいモノ、持ってるモノ表示</li>
+						</ul>
+			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>6</td>
-			<td>チェックポイント</td>
-			<td>Have」「Want」ボタンで保存したアイテムは、適切にDB保存すること</td>
+			<td>提出方法</td>
 			<td></td>
-			<td></td>
+			<td>ブランチ user_item を作成して作業を行い、そのブランチを提出</td>
+			<td>git checkout -b user_item</td>
 		</tr>
 		<tr>
 			<td>7</td>
-			<td>チェックポイント</td>
-			<td>全てのページのアイテム表示に対して「Have」「Want」が行えて同様に動作すること</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td>チェックポイント</td>
-			<td>既に「Have」「Want」を行っている場合は、ボタンの表示をそれぞれ「Have It」「Want It」にすること</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>ヒント</td>
-			<td>「Have」「Want」のボタンが押された時は、ownerships_controller.rbを使用</td>
-			<td>(routes.rbを確認)</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>ヒント</td>
-			<td>TwitterクローンのレッスンのUserモデルのフォロー・アンフォロー関連のメソッドを参考実装</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>ヒント</td>
-			<td>[Have」の状態時 button にhaveクラスを、<br>
-			   「Have it」の状態の時には have_it クラスを付けると表示変化</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>ヒント</td>
-			<td>Want」、「Want it」の場合も同様</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>提出方法</td>
-			<td>ブランチ have_and_want_btn を作成して作業を行い、そのブランチを提出</td>
-			<td></td>
-			<td>git checkout -b  have_and_want_btn</td>
-		</tr>
-		<tr>
-			<td>13</td>
 			<td>注意事項</td>
-			<td>routes.rbを編集せずに実装すること</td>
 			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>注意事項</td>
-			<td>課題提出後はmasterブランチに戻って作業すること</td>
-			<td></td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>注意事項</td>
-			<td>レビュー合格後はhave_and_want_btnブランチをmasterブランチにマージ</td>
-			<td></td>
-			<td>git checkout have_and_want_btn<br>git merge master</td>
+			<td>
+				<ol>
+					<li>課題提出後はmasterブランチに戻って作業すること</li>
+					<li>レビュー合格後はuser_itemブランチをmasterブランチにマージ</li>
+				</ol>
+			</td>
+			<td>git checkout master<br>git merge user_item</td>
 		</tr>
 	</tbody>
 </table>
