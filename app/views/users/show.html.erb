@@ -1,7 +1,8 @@
-<h3>users/show,html.erb</h3>
+
 <% content_for :head do %>
-  <meta property="head:title" content="<%= @user.name %>  - monolist" />
-  <meta property="head:description" content="<%= @user.name %><%= @user.name %>user.want_items.count, user.have_items.count" />
+  <title><%= @user.name %> - monolist</title> 
+  <meta property="description" content="<%= @user.name %> のモノページ。<%= @user.name %>の欲しいモノ、持ってるモノを表示しています。" />
 <% end %>
+  
 <%= render 'profile' , user: @user %>
 <%= render 'items/list' , items: @items %>
