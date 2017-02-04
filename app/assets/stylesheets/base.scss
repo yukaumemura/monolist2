@@ -37,3 +37,28 @@ img {
 .gravatar {
   border-radius: 100%;
 }
+.example{
+border: 1px #000000 solid;
+ width:900px;
+ margin:5px 100px;
+}
+
+.example td {
+border: 1px #000000 solid;
+}
+
+.example th {
+border: 1px #000000 solid;
+text-align: center;
+vertical-align: middle;
+}
+.example caption {
+text-align: center;
+vertical-align: middle;
+zoom: 1.5;
+font-family: "ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif;
+}
+.example img{
+  width:100px;
+  height:300xp;
+}
