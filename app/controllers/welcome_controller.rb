@@ -1,8 +1,5 @@
 class WelcomeController < ApplicationController
-  #include 
-  def initialize(id, user_id)
-        @r = Redis.new
-        @id = id
-        @user_id = user_id
-    end
+  def index
+    @items = Item.all.order("updated_at DESC").limit(30)
+  end
 end
