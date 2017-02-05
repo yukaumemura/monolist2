@@ -34,6 +34,13 @@ user20 = User.create(name: "mori"     , email: "test19@example.com" , password: 
 user21 = User.create(name: "ikeda"    , email: "test20@example.com" , password: "kirapass" , password_confirmation: "kirapass")
 user22 = User.create(name: "hashimoto", email: "test21@example.com" , password: "kirapass" , password_confirmation: "kirapass")
 
+Want.find_or_create_by(user_id: 1, item_id: 1)
+Want.find_or_create_by(user_id: 2, item_id: 1)
+Want.find_or_create_by(user_id: 3, item_id: 1)
+
+Have.find_or_create_by(user_id: 1, item_id: 1)
+Have.find_or_create_by(user_id: 2, item_id: 1)
+Have.find_or_create_by(user_id: 3, item_id: 1)
 
 user1.follow(user2)
 user1.follow(user3)
