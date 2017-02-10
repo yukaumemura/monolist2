@@ -4,7 +4,7 @@
   <% if content_for?(:head) %>
     <%= yield :head %>
   <% else %>
-    <title>Monolist</title>
+    <title>relief goods</title>
   <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,9 +13,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
+  
 
 <%= render partial: "layouts/header" %>
-<%= yield %>
+<div id="container">
+  <div class="container-fluid">
+      <div class="row">
+        
+        
+     
+    <!-- ナビゲーション開始 -->
+    <div class="col-sm-2">
+      <div class="nav">
+        <div class="section">
+          <h3>メニュー</h3>
+            <ul class="nl">
+              <li><a href="#">メニュー項目1</a></li>
+              <li><a href="#">メニュー項目2</a></li>
+              <li><a href="#">メニュー項目3</a></li>
+              <li><a href="#">メニュー項目4</a></li>
+              <li><a href="#">メニュー項目5</a></li>
+            </ul>
+  　　　　　</div>
+　　　</div>
+　　</div>
+      <!-- ナビゲーション終了 -->
+  　<div id="containerInner">
+  　 
+  　 <div id="contentInner"> 
+<div class="col-sm-8"><%= yield %></div>
+       
+    <!-- サブナビゲーション開始 -->
+ <div class="col-sm-2">
+    <div id="aside">
+     <div class="section">
+          <h3>メニュー</h3>
+            <ul class="nl">
+              <li><a href="#">メニュー項目1</a></li>
+              <li><a href="#">メニュー項目2</a></li>
+              <li><a href="#">メニュー項目3</a></li>
+              <li><a href="#">メニュー項目4</a></li>
+              <li><a href="#">メニュー項目5</a></li>
+            </ul>
+  　　　　　</div>
+    </div>
+    </div>
+</div>
+<!-- サブナビゲーション終了 -->
+　　</div>
+</div>
+</div>
+ </div>
+    </div>
 <%= render partial: "layouts/footer" %>
 
 </body>

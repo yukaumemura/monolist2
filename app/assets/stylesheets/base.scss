@@ -37,3 +37,109 @@ img {
 .gravatar {
   border-radius: 100%;
 }
+/* --- 全体の背景・テキスト --- */
+
+
+/* --- 全体のリンクテキスト --- */
+a:link { color: #0000ff; }
+a:visited { color: #800080; }
+a:hover { color: #ff0000; }
+a:active { color: #ff0000; }
+
+/* --- コンテナ --- */
+#container {
+width: 96%; /* ページの幅 */
+margin: 0 auto; /* センタリング */
+background: url(sidebar_180.gif) repeat-y left; /* 左サイドバーの背景画像 */
+background-color: #ffffff; /* メインカラムの背景色 */
+border-left: 1px #c0c0c0 solid; /* 左の境界線 */
+border-right: 1px #c0c0c0 solid; /* 右の境界線 */
+}
+#containerInner {
+width: 100%;
+background: url(sidebar_180.gif) repeat-y right; /* 右サイドバーの背景画像 */
+}
+
+/* --- ナビゲーション --- */
+/* --- ナビゲーションバー --- */
+div.nav {
+width: 180px; /* ナビゲーションの幅 */
+font-size: 80%;
+margin: 10px;
+padding: 5px;
+}
+
+/* --- メニューエリア --- */
+div.nav ul.nl {
+margin: 0;
+padding: 0;
+border: 1px #666666 solid; /* メニューエリアの境界線 */
+list-style-type: none;
+text-align: left;
+}
+
+/* --- メニュー項目 --- */
+div.nav ul.nl li {
+border-top: 1px #808080 solid; /* 項目の上境界線 */
+border-bottom: 1px #404040 solid; /* 項目の下境界線 */
+}
+
+/* --- リンク --- */
+div.nav ul.nl li a {
+display: block;
+position: relative; /* IE6用 */
+padding: 12px 10px; /* リンクエリアのパディング（上下、左右） */
+background: #3f3f3f url(ver_menu4_off.gif) repeat-x top; /* リンクエリアの背景 */
+color: #e0e0e0; /* 文字色 */
+text-decoration: none; /* テキストの下線（なし） */
+}
+/* --- ポイント時の設定 --- */
+div.nav ul.nl li a:hover {
+background: #505050 url(ver_menu4_on.gif) repeat-x top; /* ポイント時の背景 */
+text-decoration: underline; /* テキストの下線（あり） */
+}
+
+
+/* --- メインカラム --- */
+#content {
+float: left;
+width: 100%;
+margin-right: -180px; /* 右サイドバーの幅に合わせる（マイナス値） */
+position: relative;
+z-index: 1;
+}
+#contentInner {
+margin-left: 180px; /* 左サイドバーの幅に合わせる */
+margin-right: 180px; /* 右サイドバーの幅に合わせる */
+}
+
+/* --- サブナビゲーション --- */
+#aside {
+float: left;
+width: 180px; /* 右サイドバーの幅 */
+position: relative;
+z-index: 3;
+}
+
+/* --- フッタ --- */
+#footer {
+clear: left; /* フロートのクリア */
+width: 100%;
+background-color: #ffe080; /* フッタの背景色 */
+}
+/* --- ボックス --- */
+div.section {
+background-color: #ffffff; /* ボックスの背景色 */
+border: 1px #c0c0c0 solid; /* ボックスの境界線 */
+font-size: 80%; /* ボックスの文字サイズ */
+}
+
+/* --- 見出し --- */
+div.section h3 {
+margin: 0; /* 見出しのマージン */
+padding: 6px 10px; /* 見出しのパディング（上下、左右） */
+background-color: #f5f5f5; /* 見出しの背景色 */
+border-bottom: 1px #c0c0c0 solid; /* 見出しの下境界線 */
+font-size: 100%; /* 見出しの文字サイズ */
+}
+

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'relief/list'
+
   root 'welcome#index'
 
   get    'signup', to: 'users#new'
+  get 'relief/rist', to: 'relief#rist' 
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
