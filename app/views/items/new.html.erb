@@ -1,3 +1,13 @@
+  <!-- ナビゲーション終了 -->
+ <div id="containerInner">
+  <div id="contentInner"> 
+　　<div class="panel panel-success">
+       <div class="panel-heading">○○○ ××:××の現状支援一覧登録</div>
+        　<div class="panel-body">現在の物資在庫状況をご確認の上でご確認ください</div>
+      </div>
+  　</div> 　
+                
+        
 <div class="search">
   <%= form_tag new_item_path , method: :get do %>
     <%= text_field_tag :q , params[:q], placeholder: "キーワードを入力", required: true %>
@@ -18,3 +28,76 @@
     </div>
   <% end %>
 </div>
+
+
+      <div class="container">
+  <div class="row">
+    <div class="col-sm-2">物資名</div>
+    <div class="col-sm-10 form-inline" style="padding: 3px;">
+      <input type="text" class="form-control input-sm" id="name" placeholder="コーラ" size="80">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">写真</div>
+    <div class="col-sm-10 form-inline" style="padding: 3px;">
+      <input type="image" src="button.gif" alt="コカ・コーラ" align="middle">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">現在在庫所持数</div>
+    <div class="col-sm-10 form-inline" style="padding: 3px;">
+      <input type="text" class="form-control input-sm" id="name" placeholder="200" size="10">
+    </div>
+  </div>
+  <div class="row">
+   <div class="col-sm-2">現在不足数</div>
+    <div class="col-sm-10 form-inline" style="padding: 3px;">
+      <input type="text" class="form-control input-sm" id="name" placeholder="150" size="10">
+    </div>
+  </div>
+ 　<div class="row">
+   <div class="col-sm-2">備考</div>
+    <div class="col-sm-10 form-inline" style="padding: 3px;">
+      <textarea name="example1" cols="75" rows="5"></textarea
+    </div>
+  </div>
+  <div class="text-center" style="padding: 30px;">
+    <button type="button" class="btn btn-success">入力内容仮登録 <span class="glyphicon glyphicon-chevron-right"></span></button>
+    <button type="button" class="btn btn-success">削除 <span class="glyphicon glyphicon-chevron-right"></span></button>
+  </div>
+</div>
+　  </div>
+
+ <div class="panel panel-success">
+          <div class="panel-heading">現状支援一覧登録状況</div>
+        　　<div class="panel-body">
+                <table class="table table-striped">
+                  <tr>
+                    <th>番号</th>
+                    <th>物資名</th>
+                    <th>写真</th>
+                    <th>現在在庫所持数</th>
+                    <th>現在不足数</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td>コーラ</td>
+                    <td><input type="image" src="button.gif" alt="コカ・コーラ" align="middle"></td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>見本</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </table>
+          　</div>
+        　</div>
+  　</div>
+  　　</div>

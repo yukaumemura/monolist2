@@ -1,5 +1,7 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
-
+*{padding:0;
+  margin:0;
+}
 html,
 body {
   position: relative;
@@ -37,7 +39,6 @@ img {
 .gravatar {
   border-radius: 100%;
 }
-/* --- 全体の背景・テキスト --- */
 
 
 /* --- 全体のリンクテキスト --- */
@@ -63,9 +64,9 @@ background: url(sidebar_180.gif) repeat-y right; /* 右サイドバーの背景�
 /* --- ナビゲーション --- */
 /* --- ナビゲーションバー --- */
 div.nav {
-width: 180px; /* ナビゲーションの幅 */
+width: 250px; /* ナビゲーションの幅 */
 font-size: 80%;
-margin: 10px;
+margin: 2px;
 padding: 5px;
 }
 
@@ -116,16 +117,19 @@ margin-right: 180px; /* 右サイドバーの幅に合わせる */
 /* --- サブナビゲーション --- */
 #aside {
 float: left;
-width: 180px; /* 右サイドバーの幅 */
+width: 300px; /* 右サイドバーの幅 */
 position: relative;
 z-index: 3;
+margin-top:-70px;
+margin-right:-500px;
+padding: 5px;
 }
 
 /* --- フッタ --- */
 #footer {
 clear: left; /* フロートのクリア */
 width: 100%;
-background-color: #ffe080; /* フッタの背景色 */
+background-color: #000000; /* フッタの背景色 */
 }
 /* --- ボックス --- */
 div.section {
@@ -143,3 +147,29 @@ border-bottom: 1px #c0c0c0 solid; /* 見出しの下境界線 */
 font-size: 100%; /* 見出しの文字サイズ */
 }
 
+
+.example{
+border: 1px #000000 solid;
+ width:900px;
+ margin:5px 100px;
+}
+
+.example td {
+border: 1px #000000 solid;
+}
+
+.example th {
+border: 1px #000000 solid;
+text-align: center;
+vertical-align: middle;
+}
+.example caption {
+text-align: center;
+vertical-align: middle;
+zoom: 1.5;
+font-family: "ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif;
+}
+.example img{
+  width:100px;
+  height:300xp;
+}

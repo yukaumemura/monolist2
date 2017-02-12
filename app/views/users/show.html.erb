@@ -1,27 +1,43 @@
- 
- <div class="panel panel-default">
-  　　<div class="panel-heading">ユーザープロフィール</div>
-      <div class="panel-body">
-    <%= render 'profile' , user: @user %>
-    </div>
-  </div>
-    <%= render 'items/list' , items: @items %>
-    <%= render 'items/list' , items: @items %>
-    <h2>現状支援一覧</h2>
-    <div class="panel panel-default">
-     <div class="panel-heading">パネルヘッダー</div>
-      <div class="panel-body">パネル内容</div>
-      <table class="table table-striped">
-         <tr>
-         <th>1-1</th>
-         <th>1-2</th>
-         <th>1-3</th>
-         </tr>
-         <tr>
-         <td>2-1</td>
-         <td>2-2</td>
-         <td>2-3</td>
-         </tr>
-      </table>
-  </div>
-    　
+
+<div class="section">
+  <h3>アカウント</h3>
+ </div>         
+  <% content_for :head do %>
+  <title><%= @user.name %> - monolist</title> 
+  <meta name="description" content="<%= @user.name %> のモノページ。<%= @user.name %> の欲しいモノ、持ってるモノを表示しています。">
+<% end %>
+  
+<%= render 'profile' , user: @user %>
+   
+
+<div class="panel panel-success">
+          <div class="panel-heading">現状支援一覧登録状況</div>
+        　　<div class="panel-body">
+                <table class="table table-striped">
+                  <tr>
+                    <th>番号</th>
+                    <th>物資名</th>
+                    <th>現在在庫所持数</th>
+                    <th>現在不足数</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <td>0</td>
+                    <td><input type="image" src="button.gif" alt="コカ・コーラ" align="middle"></td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>見本</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td> <%= render 'items/list' , items: @items %></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </table>
+          　</div>
+        　</div>
+  　</div>
+  　　</div>
+    
