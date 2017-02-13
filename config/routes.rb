@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'guidelines/news'
   get 'relief/stock'
-
   get 'relief/information'
-
   get 'relief/list'
 
   root 'welcome#index'
