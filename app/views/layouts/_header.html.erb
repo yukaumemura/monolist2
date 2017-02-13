@@ -17,12 +17,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             
-            <li><%= link_to "物資不足情報", '#' %></li>
-            <% unless logged_in? %>
-            
+            <li><%= link_to "物資不足情報", relief_information_path %></li>
+                 <% unless logged_in? %>
               <li><%= link_to "新規登録", signup_path %></li>
+              <li><%= link_to "ログイン", login_path %></li>
             <% else %>
-            
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -30,6 +29,7 @@
                 <% end %>
               </li>
               <li><%= link_to "避難者情報", relief_list_path %></li>
+              <li><%= link_to "災害物資在庫一覧", relief_stock_path %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <span class="gravatar">

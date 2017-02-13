@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'relief/stock'
+
+  get 'relief/information'
+
   get 'relief/list'
 
   root 'welcome#index'
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
   get    'signup', to: 'users#new'
   get 'relief/rist', to: 'relief#rist'
   get 'relief/information', to: 'relief#information'
+  get 'relief/stock', to: 'relief#stock'
   get    'login' , to: 'sessions#new'
   get 'ranking/have', to: 'ranking#have' 
   get 'ranking/want', to: 'ranking#want' 

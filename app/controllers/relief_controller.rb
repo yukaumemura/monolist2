@@ -1,4 +1,4 @@
 class ReliefController < ApplicationController
-  def list
+  def stock
   end
 end
