@@ -1,6 +1,5 @@
 class AddFuriganaToUsers < ActiveRecord::Migration
   def change
-    binding.pry
     add_column :users, :furigana, :string
     add_column :users, :post_num,:integer
     add_column :users, :prefectures, :stirng
