@@ -1,11 +1,11 @@
 class AddFuriganaToUsers < ActiveRecord::Migration
   def change
     add_column :users, :furigana, :string
-    add_column :users, :post_num,:integer
-    add_column :users, :prefectures, :stirng
-    add_column :users, :municipality, :stirng
-    add_column :users, :area, :stirng
-    add_column :users, :building, :stirng
+    add_column :users, :post_num, :integer
+    add_column :users, :prefectures, :string
+    add_column :users, :municipality, :string
+    add_column :users, :area, :string
+    add_column :users, :building, :string
     add_column :users, :tel, :integer
     
     add_column :users, :fax, :integer
