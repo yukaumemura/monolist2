@@ -25,7 +25,7 @@
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  物資登録
+                  物資ネット検索
                 <% end %>
               </li>
               <li><%= link_to "避難者情報", relief_list_path %></li>
@@ -39,9 +39,8 @@
                   <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <%= link_to "プロフィール" , current_user  %>
-                  </li>
+                  <li><%= link_to "アカウント" , current_user  %></li>
+                  <li><%= link_to "プロフ設定", edit_user_path(current_user) %></li>
                   <li role="separator" class="divider"></li>
                   <li>
                     <%= link_to "ログアウト", logout_path, method: "delete" %>

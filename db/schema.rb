@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(version: 20170213102500) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "furigana"
-    t.integer  "post_num"
+    t.string   "post_num"
     t.string   "prefectures"
     t.string   "municipality"
     t.string   "area"
     t.string   "building"
-    t.integer  "tel"
-    t.integer  "fax"
+    t.string   "tel"
+    t.string   "fax"
   end
 
 end

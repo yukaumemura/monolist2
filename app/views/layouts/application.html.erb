@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
- <% if content_for?(:head) %>
-    <%= yield :head %>
-  <% else %>
-    <title>relief goods</title>
-  <% end %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-</head>
-<body>
-  
+    <head>
+        <% if content_for?(:head) %>
+        <%= yield :head %>
+    <% else %>
+        <title>relief goods</title>
+        <% end %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <%= favicon_link_tag 'favicon.ico' %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    </head>
+    <body>
 
-<%= render partial: "layouts/header" %>
-<div id="container">
-  <div class="container-fluid">
-      <div class="row">
-        
-        
-     
-    <!-- ナビゲーション開始 -->
-    <div class="col-sm-2">
-      <div class="nav">
-        <div class="section">
-          <h3>ランキング</h3>
-            <ul class="nl">
-             　<li><%= link_to "現在所持在庫数", ranking_have_path %></li>
-            　<li><%= link_to "現在不足数", ranking_want_path %></li>
-            　 <li><a href="#">メニュー項目5</a></li>
-              <li><a href="#">メニュー項目5</a></li>
-              <li><a href="#">メニュー項目5</a></li>
-            </ul>
-  　　　　　</div>
-　　　</div>
-　　</div>
-      <!-- ナビゲーション終了 -->
-  　<div id="containerInner">
-  　 
-  　 <div id="contentInner"> 
-<div class="col-sm-8"><%= yield %></div>
-       
-    <!-- サブナビゲーション開始 -->
- <div class="col-sm-2">
-    <div id="aside">
-        
-    </div>
-</div>
-<!-- サブナビゲーション終了 -->
-　　</div>
-</div>
-</div>
- </div>
-    </div>
-<%= render partial: "layouts/footer" %>
+        <%= render partial: "layouts/header" %>
+        <div id="container">
+            <div class="container-fluid">
+                <div class="row">
 
-</body>
+                    <!-- ナビゲーション開始 -->
+                    <div class="col-sm-2">
+                        <div class="nav">
+                            <div class="section">
+                                <h3>ランキング</h3>
+                                <ul class="nl">
+                                    <li><%= link_to "現在所持在庫数", ranking_have_path %></li>
+                                    <li><%= link_to "現在不足数", ranking_want_path %></li>
+                                    <li>
+                                        <a href="#">メニュー項目5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">メニュー項目5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">メニュー項目5</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ナビゲーション終了 -->
+                    <div class="col-sm-8">
+                        <div id="containerInner">
+
+                            <div id="contentInner">
+                                <%= yield %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- サブナビゲーション開始 -->
+                    <div class="col-sm-2">
+                        <div id="aside"></div>
+                    </div>
+                    <!-- サブナビゲーション終了 -->
+                </div>
+            </div>
+        </div>
+        <%= render partial: "layouts/footer" %>
+
+    </body>
 </html>

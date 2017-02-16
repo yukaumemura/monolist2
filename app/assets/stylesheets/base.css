@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
+* {
+  padding: 0;
+  margin: 0; }
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2 !important;
+  color: #333;
+  font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 15px;
+  line-height: 1.45; }
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+  outline: none; }
+  a:visited, a:active {
+    color: #337ab7; }
+  a:hover {
+    color: #22527b; }
+  a.btn {
+    color: #fff; }
+
+img {
+  max-width: 100%; }
+
+.gravatar {
+  border-radius: 100%; }
+
+/* --- 全体のリンクテキスト --- */
+a:link {
+  color: #0000ff; }
+
+a:visited {
+  color: #800080; }
+
+a:hover {
+  color: #ff0000; }
+
+a:active {
+  color: #ff0000; }
+
+/* --- コンテナ --- */
+#container {
+  width: 96%;
+  /* ページの幅 */
+  margin: 0 auto;
+  /* センタリング */
+  background: url(sidebar_180.gif) repeat-y left;
+  /* 左サイドバーの背景画像 */
+  background-color: #ffffff;
+  /* メインカラムの背景色 */
+  border-left: 1px #c0c0c0 solid;
+  /* 左の境界線 */
+  border-right: 1px #c0c0c0 solid;
+  /* 右の境界線 */ }
+
+#containerInner {
+  width: 100%;
+  background: url(sidebar_180.gif) repeat-y right;
+  /* 右サイドバーの背景画像 */ }
+
+/* --- ナビゲーション --- */
+/* --- ナビゲーションバー --- */
+div.nav {
+  font-size: 80%;
+  margin: 2px;
+  padding: 5px; }
+
+/* --- メニューエリア --- */
+div.nav ul.nl {
+  margin: 0;
+  padding: 0;
+  border: 1px #666666 solid;
+  /* メニューエリアの境界線 */
+  list-style-type: none;
+  text-align: left; }
+
+/* --- メニュー項目 --- */
+div.nav ul.nl li {
+  border-top: 1px #808080 solid;
+  /* 項目の上境界線 */
+  border-bottom: 1px #404040 solid;
+  /* 項目の下境界線 */ }
+
+/* --- リンク --- */
+div.nav ul.nl li a {
+  display: block;
+  position: relative;
+  /* IE6用 */
+  padding: 12px 10px;
+  /* リンクエリアのパディング（上下、左右） */
+  background: #3f3f3f url(ver_menu4_off.gif) repeat-x top;
+  /* リンクエリアの背景 */
+  color: #e0e0e0;
+  /* 文字色 */
+  text-decoration: none;
+  /* テキストの下線（なし） */ }
+
+/* --- ポイント時の設定 --- */
+div.nav ul.nl li a:hover {
+  background: #505050 url(ver_menu4_on.gif) repeat-x top;
+  /* ポイント時の背景 */
+  text-decoration: underline;
+  /* テキストの下線（あり） */ }
+
+/* --- メインカラム --- */
+#content {
+  float: left;
+  width: 100%;
+  margin-right: -180px;
+  /* 右サイドバーの幅に合わせる（マイナス値） */
+  position: relative;
+  z-index: 1; }
+
+/* --- サブナビゲーション --- */
+/* --- フッタ --- */
+#footer {
+  clear: left;
+  /* フロートのクリア */
+  width: 100%;
+  background-color: #000000;
+  /* フッタの背景色 */ }
+
+/* --- ボックス --- */
+div.section {
+  background-color: #ffffff;
+  /* ボックスの背景色 */
+  border: 1px #c0c0c0 solid;
+  /* ボックスの境界線 */
+  font-size: 80%;
+  /* ボックスの文字サイズ */ }
+
+/* --- 見出し --- */
+div.section h3 {
+  margin: 0;
+  /* 見出しのマージン */
+  padding: 6px 10px;
+  /* 見出しのパディング（上下、左右） */
+  background-color: #f5f5f5;
+  /* 見出しの背景色 */
+  border-bottom: 1px #c0c0c0 solid;
+  /* 見出しの下境界線 */
+  font-size: 100%;
+  /* 見出しの文字サイズ */ }
+
+.example {
+  border: 1px #000000 solid;
+  width: 900px;
+  margin: 5px 100px; }
+
+.example td {
+  border: 1px #000000 solid; }
+
+.example th {
+  border: 1px #000000 solid;
+  text-align: center;
+  vertical-align: middle; }
+
+.example caption {
+  text-align: center;
+  vertical-align: middle;
+  zoom: 1.5;
+  font-family: "ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif; }
+
+.example img {
+  width: 100px;
+  height: 300xp; }
+
+/*# sourceMappingURL=base.css.map */
