@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'relief/Stocklist'
+
   get 'relief/StockRegist'
 
   get 'guidelines/news'

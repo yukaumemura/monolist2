@@ -1,4 +1,4 @@
 class ReliefController < ApplicationController
-  def StockRegist
+  def Stocklist
   end
 end

@@ -1,2 +1,122 @@
-<h1>Relief#StockRegist</h1>
-<p>Find me in app/views/relief/StockRegist.html.erb</p>
+ <div class="panel panel-success">
+       <div class="panel-heading">物資在庫登録</div>
+        　<div class="panel-body">
+        　  現在の物資在庫状況をご確認の上で災害物資の内容をご登録ください
+        　  </div>
+      </div>
+  　</div> 
+  
+ <div class="col-sm-6">  
+<div class="panel panel-success">
+  <div class="panel-heading">物資在庫仮登録フォーム</div>
+      <div class="panel-body">
+            　<table class="table table-bordered">
+	<tbody>
+		<tr>
+			<th colspan="2">品名</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="コーラ" size="10"></td>
+		</tr>
+		<tr>
+			<th rowspan="2">サイズ</th>
+			<th>種目</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>大きさcm</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th rowspan="4">段ボール</th>
+			<th>重量ｇ</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>１箱の商品入数</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>サイズ<br>縦×横×幅cm</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>重量G</th>
+		　<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th rowspan="2">賞味期限</th>
+			<th>開始日時</th>
+			<td><input type="date" name="date"></td>
+		</tr>
+		<tr>
+			<th>終了日時</th>
+			<td><input type="date" name="date"></td>
+		</tr>
+		<tr>
+		    <th rowspan="3">物資詳細</th>
+			<th>在庫数</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>不足数</th>
+			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		</tr>
+		<tr>
+			<th>備考</th>
+			<td><textarea name="example1" cols="45" rows="5"></textarea></td>
+		</tr>
+	</tbody>
+</table>
+     </div>
+          <div class="panel-footer">
+              <div class="text-center">
+                <button type="button" class="btn btn-success">入力内容仮登録 </button>
+                <button type="button" class="btn btn-success">削除</button>
+                <button type="button" class="btn btn-success">新規写真登録 </button>
+            </div>
+          </div>
+         </div>
+ </div>
+<!-- サブナビゲーション終了 -->
+<div class="col-md-8">
+ <div class="panel panel-success">
+          <div class="panel-heading">現状支援一覧登録状況</div>
+        　　<div class="panel-body">
+                <table class="table table-striped">
+                  <tr>
+                    <th>選択</th>
+                    <th>番号</th>
+                    <th>物資名</th>
+                    <th>サイズ</th>
+                    <th>サイズ種目</th>
+                    <th>在庫所持数</th>
+                    <th>不足数</th>
+                    <th>不要数</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="chk_1" value="1" id="chk_1" /></td>
+                    <td>0</td>
+                    <td><input type="image" src="button.gif" alt="コカ・コーラ" align="middle"></td>
+                    <td></td>
+                     <td>大人</td>
+                     <td>100</td>
+                    <td>300</td>
+                    <td>200</td>
+                    <td>見本</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+              </table>
+          　</div>
+        　</div>
+  　</div>
+ 
