@@ -9,8 +9,8 @@ class CreateReliefs < ActiveRecord::Migration
       t.integer :gs_dbboxcount
       t.integer :gs_dbboxsize
       t.integer :gs_dbweight
-      t.data :gs_BestbeforEnd
-      t.data :gs_BestbeforeStart
+      t.date :gs_BestbeforEnd
+      t.date :gs_BestbeforeStart
       t.integer :gs_NowNum
       t.integer :gs_shortages
       t.string :goos_note

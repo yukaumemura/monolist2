@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213102500) do
+ActiveRecord::Schema.define(version: 20170216121858) do
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
@@ -49,6 +49,23 @@ ActiveRecord::Schema.define(version: 20170213102500) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "reliefs", force: :cascade do |t|
+    t.integer  "gs_ID"
+    t.string   "gs_name"
+    t.string   "gs_sizeEvent"
+    t.string   "gs_goodsSize"
+    t.integer  "gs_dbweight"
+    t.integer  "gs_dbboxcount"
+    t.integer  "gs_dbboxsize"
+    t.date     "gs_BestbeforEnd"
+    t.date     "gs_BestbeforeStart"
+    t.integer  "gs_NowNum"
+    t.integer  "gs_shortages"
+    t.string   "goos_note"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
