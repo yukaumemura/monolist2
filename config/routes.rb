@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'reliefs/new'
+
+  get 'reliefs/index'
+
   get 'relief/Stocklist'
 
   get 'relief/StockRegist'
-
   get 'guidelines/news'
   get 'relief/stock'
   get 'relief/information'
@@ -27,4 +30,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :ownerships, only: [:create, :destroy]
   resources :items , only: [:new , :show]
+  resources :reliefs, only: [:new, :create, :destroy]
 end

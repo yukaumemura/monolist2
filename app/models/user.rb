@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :have_items, through: :haves, source: :item
 
   # 会員登録
+  # ユーザーの写真を登録できるようにする
+    mount_uploader :userpicture, UserpictureUploader
   # 名前(フリガナ）は必須入力かつ200文字以内
   validates :furigana, length: { maximum: 200 }, presence: true
   # 名前は200文字以内

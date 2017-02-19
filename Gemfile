@@ -66,3 +66,5 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+gem 'rmagick'
+gem 'carrierwave'

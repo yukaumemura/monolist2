@@ -3,8 +3,15 @@
         <div class="panel panel-success">
             <div class="panel-heading">会員登録</div>
             <div class="panel-body">
+                <h5>写真のサイズは最大縦500×横500までです。</h5>
                 <%= form_for(@user) do |f| %>
                 <%= render 'shared/error_messages', object: f.object %>
+                <div class="form-group">
+                    <label for="input-name" class="col-sm-2 control-label">写真</label>
+                    <div class="col-sm-10">
+                       <%= f.file_field :userpicture %> 
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="input-name" class="col-sm-2 control-label">名前(フリガナ）</label>
                     <div class="col-sm-10">

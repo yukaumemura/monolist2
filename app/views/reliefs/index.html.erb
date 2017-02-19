@@ -1,0 +1,20 @@
+<h1>Reliefs#index</h1>
+<p>Find me in app/views/reliefs/index.html.erb</p>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">物資登録</div>
+    
+  <div class="panel-body">
+    <% @reliefs.each do |relief| %>
+      <span class="label label-info"><%= reliefs.gs_name %></span>
+      <%= reliefs.gs_sizeEvent %>
+      <br>
+    <% end %>
+  </div>
+</div>
+
+<% @reliefs.each do |relief| %>
+       名前:<%= relief.gs_name %>
+   内容:<%= relief.gs_sizeEvent %>
+<% end %>

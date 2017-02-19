@@ -6,3 +6,12 @@
   <meta name="description" content="<%= @user.name %> のモノページ。<%= @user.name %> の欲しいモノ、持ってるモノを表示しています。">
 <% end %>
 <%= render 'profile' , user: @user %>
+
+<% if @user.userpicture? %>
+　　<%= image_tag @user.userpicture.thumb.url %>
+　<% else %>
+　　<%= image_tag 'noimage.gif' %>
+　<% end %>
+　
+　<h3>楽天から欲しいものと持ってるもののメモ</h3>
+　<%= render 'items/list' , items: @items %>

@@ -17,5 +17,6 @@ class AddFuriganaToUsers < ActiveRecord::Migration
     add_column :users, :building,     :string
     add_column :users, :tel,          :string
     add_column :users, :fax,          :string
+    
   end
 end
