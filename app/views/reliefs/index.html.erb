@@ -7,12 +7,15 @@
     
   <div class="panel-body">
     <% @reliefs.each do |relief| %>
-      <span class="label label-info"><%= reliefs.gs_name %></span>
+      <span class="label label-info">名前:<%= reliefs.gs_name %></span>
       <%= reliefs.gs_sizeEvent %>
+      (<%= link_to "edit" , edit_relief_path(relief) %>
+      <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>)
       <br>
     <% end %>
   </div>
 </div>
+
 
 <% @reliefs.each do |relief| %>
        名前:<%= relief.gs_name %>

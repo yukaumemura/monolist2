@@ -1,3 +1,75 @@
 <h1>Reliefs#new</h1>
 <p>Find me in app/views/reliefs/new.html.erb</p>
+<div class="col-sm-4">  
+<div class="panel panel-success">
+  <div class="panel-heading">物資在庫仮登録フォーム</div>
+      <div class="panel-body">
+          <%= form_for(@reliefs) do |f| %>
+          
+            　<table class="table table-bordered" >
+	<tbody>
+		<tr>
+			<th colspan="2" width="5">品名</th>
+			<td><%= f.text_field :gs_name, class: "form-control input-sm", placeholder: "コーラ" %></td>
+		</tr>
+		<tr>
+			<th rowspan="2">サイズ</th>
+			<th>種目</th>
+			<td><%= f.select :gs_sizeEvent, {"なし" => "なし" , "大人" => "大人" ,"大人男" => "大人男" , "大人女" => "大人女"  , "子供女" => "子供女","子供男" => "子供男"} %></td>
+		</tr>
+		<tr>
+			<th>大きさ</th>
+			<td><%= f.text_field :gs_goodsSize, class: "form-control input-sm", placeholder: "S" %></td>
+		</tr>
+		<tr>
+			<th rowspan="3">段ボール</th>
+			<th>重量ｇ</th>
+			<td><%= f.text_field :gs_dbweight, class: "form-control input-sm", placeholder: "10" %></td>
+		</tr>
+		<tr>
+			<th>１箱入数</th>
+			<td><%= f.text_field :gs_dbboxcount, class: "form-control input-sm", placeholder: "10" %></td>
+		</tr>
+		<tr>
+			<th>サイズcm</th>
+			<td><%= f.text_field:gs_dbboxsize, class: "form-control input-sm", placeholder: "10×20×30" %></td>
+		</tr>
+		<tr>
+			<th rowspan="2">賞味期限</th>
+			<th>開始日時</th>
+			<td><%= f.text_field:gs_BestbeforeStart, class: "form-control input-sm", placeholder: "2017/02/09㈮" %></td>
+		</tr>
+		<tr>
+			<th>終了日時</th>
+			<td><%= f.text_field:gs_BestbeforEnd, class: "form-control input-sm", placeholder: "2017/02/09㈮" %></td>
+		</tr>
+		<tr>
+		    <th rowspan="2">物資詳細</th>
+			<th>在庫数</th>
+			<td><%= f.text_field:gs_NowNum, class: "form-control input-sm", placeholder: "30" %></td>
+		</tr>
+		<tr>
+			<th>不足数</th>
+			<td><%= f.text_field:gs_shortages, class: "form-control input-sm", placeholder: "30" %></td>
+		</tr>
+		<tr>
+			<th>備考</th>
+			<td colspan="2">
+			    <%= text_area :goos_note, :comtent, :size => "30x10" %>
 
+			</td>
+		</tr>
+	</tbody>
+</table>
+     </div>
+          <div class="panel-footer">
+              <div class="text-center">
+                 <%= f.submit "物資新規登録 ", class: "btn btn-large btn-primary" %>
+                <button type="button" class="btn btn-success">削除</button><br>
+                <button type="button" class="btn btn-success">新規写真登録 </button><br>
+            </div>
+            <% end %>
+          </div>
+         </div>
+ </div>
+ 
