@@ -10,7 +10,7 @@ class ReliefsController < ApplicationController
   end
   
   def edit
-   @relief = Relief.find(params[:gs_ID])
+   @relief = Relief.find(params[:id])
   end
   
   def create
@@ -37,9 +37,11 @@ class ReliefsController < ApplicationController
   end
 
   def destroy
-   @reliefs.destroy
-    redirect_to root_path, notice: 'メッセージを削除しました'
+    @relief = Relief.find(params[:id])
+    @relief.destroy
+    redirect_to root_path, notice: '削除しました'
   end
+  
    def set_reliefs
     @relief = Relief.find(params[:gs_ID])
   end

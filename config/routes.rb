@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'reliefs/rist'
 
-  get 'reliefs/edit'
+#  get 'reliefs/edit'
 
   get 'reliefs/new'
 
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :ownerships, only: [:create, :destroy]
   resources :items , only: [:new , :show]
-  resources :reliefs, only: [:new, :create, :destroy]
+  resources :reliefs, only: [:new, :create, :destroy, :edit, :update]
 end

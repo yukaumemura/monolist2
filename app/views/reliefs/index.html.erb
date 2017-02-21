@@ -16,6 +16,11 @@
           <table class="table table-bordered" >
 	<tbody>
 		<tr>
+			<th colspan="2" width="5" class="success">物資番号</th>
+			<td><label>全画面で登録した順に表示されてます。</label><br>
+				<%= f.text_field :id, class: "form-control input-sm", placeholder: "1" %></td>
+		</tr>
+		<tr>
 			<th colspan="2" width="5" class="success">物資写真</th>
 			<td><label>該当物資の写真を追加したい場合に使用</label><br>
 				<button type="button" class="btn btn-success">新規写真登録 </button></td>
@@ -128,7 +133,7 @@
 		</tr>
 			<% @reliefs.each do |relief| %>
 		</tr>
-			<td></td>
+			<td><%= relief.id %></td>
 			<td><%= relief.gs_name %></td>
 			<td><%= relief.gs_sizeEvent %></td>
 			<td><%= relief.gs_goodsSize %></td>
@@ -140,7 +145,7 @@
 			<td><%= relief.gs_NowNum %></td>
 			<td style="color:red;"><%= relief.gs_shortages %></td>
 			<td style="color:blue;"><%= relief.gs_ExtraParts %></td>
-			<td><%= link_to "詳細" ,reliefs_edit_path %><br>
+			<td><%= link_to "詳細" ,edit_relief_path(relief) %><br>
         <%= link_to "削除" , relief , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
         </td>
 		</tr>
