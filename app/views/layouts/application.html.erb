@@ -45,6 +45,12 @@
                         <div id="containerInner">
 
                             <div id="contentInner">
+                                <% if notice %>
+                                  <div class="alert alert-info">
+                                <%= notice %>
+                                  </div>
+                                <% end %>
+    
                                 <%= yield %>
 
                             </div>

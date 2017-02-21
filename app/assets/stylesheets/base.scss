@@ -195,3 +195,57 @@ font-family: "ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif;
     color: #f00;
   }
 }
+table {
+border: 1px #000000 solid;
+}
+
+td {
+border: 1px #000000 solid;
+text-align: center;
+vertical-align: middle;
+}
+
+th {
+border: 1px #000000 solid;
+text-align: center;
+vertical-align: middle;
+}
+
+/* --- ボックス --- */
+div.area {
+width: 542px; /* ボックスの幅 */
+padding: 3px; /* ボックスのパディング */
+background-color: #ffffff; /* ボックスの背景色 */
+border: 1px #e0e0e0 solid; /* ボックスの境界線 */
+text-align: center;
+}
+
+/* --- マップボックス --- */
+div.area dl {
+margin: 0;
+background: #eef7fe url(./images/map_back.gif) repeat-x top; /* マップボックスの背景（グラデーション） */
+border: 1px #e0e0e0 solid; /* マップボックスの境界線 */
+}
+
+/* --- タイトルエリア --- */
+div.area dt {
+margin: 5px; /* タイトルエリアのマージン */
+padding: 3px; /* タイトルエリアのパディング */
+background-color: #eef7fe; /* タイトルエリアの背景色 */
+font-weight: bold; /* 太字 */
+color: #3d7eab; /* 文字色 */
+}
+
+/* --- コメントエリア --- */
+div.area dd.description {
+margin: 10px 0; /* コメントエリアのマージン（上下、左右） */
+font-size: 80%; /* 文字サイズ */
+}
+
+/* --- マップエリア --- */
+div.area dd.map {
+margin: 20px 0; /* マップエリアのマージン（上下、左右） */
+}
+div.area dd.map img {
+border: none;
+}

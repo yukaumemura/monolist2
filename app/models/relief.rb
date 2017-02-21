@@ -7,16 +7,16 @@ class Relief < ActiveRecord::Base
     validates:gs_sizeEvent,  presence: true
     
     # サイズの大きさは200文字以内で必須項目
-    #○ validates:gs_goodsSize,  presence: true, length: { maximum: 25 }
+    validates:gs_goodsSize,  presence: true, length: { maximum: 25 }
     
     #段ボール重量
-    #○ validates :gs_dbweight, length: { maximum: 100 }, numericality: { only_integer: true },allow_blank: true
+    validates :gs_dbweight, length: { maximum: 100 }, numericality: { only_integer: true },allow_blank: true
     
     #段ボール１箱入数
-     #○validates  :gs_dbboxcount, length: { maximum: 100 }, numericality: { only_integer: true },allow_blank: true
+     validates  :gs_dbboxcount, length: { maximum: 100 }, numericality: { only_integer: true },allow_blank: true
     
     #段ボールサイズcm
-    #○ validates :gs_dbboxsize, length: { maximum: 100 },allow_blank: true
+     validates :gs_dbboxsize, length: { maximum: 100 },allow_blank: true
     
     #賞味期限開始日時
     #○ validates :gs_BestbeforeStart,length: { maximum: 100 }, allow_blank: true
@@ -30,7 +30,10 @@ class Relief < ActiveRecord::Base
     #物資詳細不足数は必須で数字型のみ対応
     #○ validates:gs_shortages,  presence: true, numericality: { only_integer: true }
     
-    #物資詳細備考は入力されたら追加
+    #物資詳細余剰数は必須で数字型のみ対応
+     #○ validates:gs_ExtraParts,  presence: true, numericality: { only_integer: true }
+     
+    #物資詳細備考は入力されたら追加 
     #○ validates:goos_note,  numericality: { only_integer: true }
     
 end
