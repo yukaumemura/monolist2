@@ -18,20 +18,22 @@
           <ul class="nav navbar-nav navbar-right">
             
             <li><%= link_to "new", reliefs_new_path %></li>
-            <li><%= link_to "index", reliefs_index_path %></li>
+            <li><%= link_to "未実装", relief_StockRegist_path %></li>
             <li><%= link_to "ガイドライン", guidelines_news_path %></li>
             <li><%= link_to "物資不足情報", relief_information_path %></li>
                  <% unless logged_in? %>
               <li><%= link_to "新規登録", signup_path %></li>
               <li><%= link_to "ログイン", login_path %></li>
             <% else %>
+ 
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                   物資ネット検索
                 <% end %>
               </li>
-              <li><%= link_to "物資在庫登録", relief_StockRegist_path %></li>
+               <li><%= link_to "物資在庫登録", reliefs_index_path %></li>
+
               <li><%= link_to "避難者情報", relief_list_path %></li>
               <li><%= link_to "製作内容未定", relief_stock_path %></li>
               <li class="dropdown">
@@ -49,7 +51,7 @@
                   <li>
                     <%= link_to "ログアウト", logout_path, method: "delete" %>
                   </li>
-                </ul>
+                </ui> 
               </li>
             <% end %>
           </ul>

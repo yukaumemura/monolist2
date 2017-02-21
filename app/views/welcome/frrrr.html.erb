@@ -45,10 +45,10 @@
 </div>
 
 
-  　　<table class="table table-bordered">
+  　 <table class="table table-bordered">
 	<tbody>
 	    <th>品名</th>
-	    <td colspan="12"><input type="text" class="form-control input-sm" id="name" placeholder="コーラ" size="10"></td>
+	    <td colspan="12"><%= f.text_field :gs_name, class: "form-control input-sm", placeholder: "コーラ" %></td>
 		</tr>
 		<tr>
 			<th colspan="2">サイズ</th>
@@ -69,21 +69,24 @@
 			<th>在庫数</th>
 		</tr>
 		<tr>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="大人" size="10"></td>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
-	    	<td><input type="date" name="date"></td>
-			<td><input type="date" name="date"></td>
-		    <td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
-			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
+		
+			<td><%= f.select :gs_sizeEvent, {"なし" => "なし" , "大人" => "大人" ,"大人男" => "大人男" , "大人女" => "大人女"  , "子供女" => "子供女","子供男" => "子供男"} %></td>
+			<td><%= f.text_field :gs_goodsSize, class: "form-control input-sm", placeholder: "S" %></td>
+			<td><%= f.text_field :gs_dbweight, class: "form-control input-sm", placeholder: "10" %></td>
+			<td><%= f.text_field :gs_dbboxcount, class: "form-control input-sm", placeholder: "10" %></td>
+			<td><%= f.text_field:gs_dbboxsize, class: "form-control input-sm", placeholder: "10×20×30" %></td>
+	    	<td><%= f.text_field:gs_BestbeforeStart, class: "form-control input-sm", placeholder: "2017/02/09㈮" %></td>
+			<td><%= f.text_field:gs_BestbeforEnd, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
+			<td><%= f.text_field:gs_NowNum, class: "form-control input-sm", placeholder: "30" %></td>
+			<td><%= f.text_field:gs_shortages, class: "form-control input-sm", placeholder: "30" %></td>
 			<td><input type="text" class="form-control input-sm" id="name" placeholder="200" size="10"></td>
 		</tr>
 		<tr>
 		<th>備考</th>
-	    <td colspan="12"><textarea name="example1" cols="120" rows="5"></textarea></td>
+	    <td colspan="12"> <%= text_area :goos_note, :comtent, :size => "70x5" %></textarea></td>
 		</tr>
 		<tr>    
 	</tbody>
 </table>
+
+           

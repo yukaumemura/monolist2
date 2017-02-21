@@ -55,6 +55,8 @@ background: url(sidebar_180.gif) repeat-y left; /* 左サイドバーの背景�
 background-color: #ffffff; /* メインカラムの背景色 */
 border-left: 1px #c0c0c0 solid; /* 左の境界線 */
 border-right: 1px #c0c0c0 solid; /* 右の境界線 */
+
+padding-top: 40px; /*　画面上部とかぶらないように　*/
 }
 #containerInner {
 width: 100%;
@@ -177,4 +179,19 @@ font-family: "ＭＳ Ｐゴシック","ＭＳ ゴシック",sans-serif;
 .example img{
   width:100px;
   height:300xp;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+
+  .form-control {
+    color: #f00;
+  }
 }

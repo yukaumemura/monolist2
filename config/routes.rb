@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'reliefs/rist'
+
   get 'reliefs/edit'
 
   get 'reliefs/new'
