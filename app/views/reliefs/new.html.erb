@@ -1,0 +1,35 @@
+<h1>Listing products</h1>
+
+<%# form_for の代わりに search_form_for を使うことで検索フォームを作成 %>
+<%= search_form_for @q do |f| %>
+
+  <%# start 特定の文字列で始まる商品名で検索 %>
+  <%= f.label :gs_name, "物資名" %>
+  <%= f.search_field :gs_name %>
+  <br />
+
+  <%# cont 文字列が含まれる商品説明で検索（not_cont で含まれない商品説明） %>
+  <%= f.label :gs_sizeEvent, "物資種目" %>
+  <%= f.search_field :gs_sizeEvent %>
+  <br />
+
+  <%# 関連の名前で検索 Product.carrier.name %>
+  <%= f.label :gs_goodsSize, "物資サイズ" %>
+  <%= f.search_field :gs_goodsSize %>
+  <br />
+
+  <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+  <%= f.label :price_lt, "値段(以下)" %>
+  <%= f.search_field :price_lt %>
+  <br />
+
+  <%# or で複数の値をorで検索（and 複数の値をand条件で検索） %>
+  <%= f.label :name_or_description_cont, "名前 or 説明" %>
+  <%= f.search_field :name_or_description_cont %>
+  <br />
+
+  <%# 検索ボタン %>
+  <%= f.submit %>
+<% end %>
+
+<hr />

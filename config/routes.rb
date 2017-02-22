@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :products
   get 'reliefs/rist'
 
 #  get 'reliefs/edit'

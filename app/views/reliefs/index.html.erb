@@ -114,19 +114,12 @@
 			<th rowspan="2">物資№</th>
 			<th rowspan="2">品名</th>
 			<th colspan="2">物資</th>
-			<th colspan="3">段ボール</th>
-			<th colspan="2">使用期限</th>
 		   <th colspan="3">物資詳細</th>
 		   <th rowspan="2">手続き</th>
 		</tr>
 		<tr class="warning">
 			<th>種目</th>
 			<th>サイズ</th>
-			<th>重量ｇ</th>
-			<th>１箱入数</th>
-			<th>サイズ</th>
-			<th>開始</th>
-			<th>終了</th>
 			<th>在庫数</th>
 			<th>不足数</th>
 			<th>余剰数</th>
@@ -137,11 +130,6 @@
 			<td><%= relief.gs_name %></td>
 			<td><%= relief.gs_sizeEvent %></td>
 			<td><%= relief.gs_goodsSize %></td>
-			<td><%= relief.gs_dbweight %></td>
-			<td><%= relief.gs_dbboxcount %></td>
-			<td><%= relief.gs_dbboxsize %></td>
-			<td><%= relief.gs_BestbeforeStart %></td>
-			<td><%= relief.gs_BestbeforEnd %></td>
 			<td><%= relief.gs_NowNum %></td>
 			<td style="color:red;"><%= relief.gs_shortages %></td>
 			<td style="color:blue;"><%= relief.gs_ExtraParts %></td>

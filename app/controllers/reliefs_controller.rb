@@ -1,12 +1,16 @@
 class ReliefsController < ApplicationController
   
+  # has_many :products
+  # a belongs_to :relief
   def index
    @relief = Relief.new
    @reliefs= Relief.all
+  
   end
   
   def new
    @relief = Relief.new
+  
   end
   
   def edit
