@@ -3,9 +3,8 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :gsname
       t.string :gsgoodsSize
-      t.string :gsgoodsSize
-      t.data :gsBestbeforeStart
-      t.boolean :gs_BestbeforEnd
+      t.date :gsBestbeforeStart
+      t.date :gs_BestbeforEnd
 
       t.timestamps null: false
     end

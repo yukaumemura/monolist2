@@ -158,10 +158,10 @@ div.section h3 {
   width: 900px;
   margin: 5px 100px; }
 
-.example td {
+ td {
   border: 1px #000000 solid; }
 
-.example th {
+th {
   border: 1px #000000 solid;
   text-align: center;
   vertical-align: middle; }
@@ -174,7 +174,7 @@ div.section h3 {
 
 .example img {
   width: 100px;
-  height: 300xp; }
+  height: 300px; }
 
 #error_explanation {
   color: red; }

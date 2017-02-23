@@ -19,4 +19,3 @@ class CreateReliefs < ActiveRecord::Migration
     end
   end
 end
-

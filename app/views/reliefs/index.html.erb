@@ -1,25 +1,22 @@
-<br>
+
 <div class="panel panel-default">
   <div class="panel-heading">物資在庫登録</div>
   <div class="panel-body">
-  	Reliefs#index<br>
-  	Find me in app/views/reliefs/index.html.erb<br>
-  	こちらのページで現在仕分けされた物資の在庫状況を管理し、不足品、余剰品があれば、不足余剰品登録してください
+  	現在仕分けされた物資の在庫状況を管理し、不足品、余剰品があれば、物情配信で拡散してください<br>
+  	物資在庫検索からは特定の対象物資を検索確認できます。
   	</div>
 </div>
 <div class="col-sm-4">  
 <div class="panel panel-success">
   <div class="panel-heading">物資在庫登録フォーム</div>
+
     <div class="panel-body">
+    
+
           <%= form_for(@relief) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <table class="table table-bordered" >
 	<tbody>
-		<tr>
-			<th colspan="2" width="5" class="success">物資番号</th>
-			<td><label>全画面で登録した順に表示されてます。</label><br>
-				<%= f.text_field :id, class: "form-control input-sm", placeholder: "1" %></td>
-		</tr>
 		<tr>
 			<th colspan="2" width="5" class="success">物資写真</th>
 			<td><label>該当物資の写真を追加したい場合に使用</label><br>
@@ -55,18 +52,18 @@
 		<tr>
 			<th class="success">サイズcm</th>
 			<td><label>１つの段ボールあたり、縦/横/幅のサイズ</label><br>
-				<%= f.text_field:gs_dbboxsize, class: "form-control input-sm", placeholder: "10/20/30" %></td>
+				<%= f.text_field :gs_dbboxsize, class: "form-control input-sm", placeholder: "10/20/30" %></td>
 		
 		</tr>
 		<tr>
 			<th rowspan="2" class="success">使用期限</th>
 			<th class="success">開始</th>
 			<td><label>食料品等で使用期限がある場合に記入</label><br>
-				<%= f.text_field:gs_BestbeforeStart, class: "form-control input-sm", placeholder: "2017/02/09㈮" %></td>
+				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
 		</tr>
 		<tr>
 			<th class="success">終了</th>
-			<td><%= f.text_field:gs_BestbeforEnd, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
+			<td><%= f.datetime_select :gs_BestbeforEnd,:use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
 		</tr>
 		<tr>
 		    <th rowspan="3" class="success">物資詳細</th>
@@ -81,12 +78,12 @@
 		</tr>
 			<tr>
 			<th class="success">余剰数</th>
-			<td><label>現在その物資が今どれだけ余ってて要らないか</label>
+			<td><label>現在その物資が今どれだけいらないか</label>
 				<%= f.text_field:gs_ExtraParts, class: "form-control input-sm", placeholder: "30" %></td>
 		</tr>
 		<tr>
-			<th class="success">備考</th>
-			<td colspan="2"><%= text_area :goos_note, :comtent, :size => "50x5" %></td>
+			<th class="success" colspan="2">備考</th>
+			<td><%= text_area :goos_note, :comtent, :size => "42x5" %></td>
 		</tr>
 	</tbody>
 </table>
@@ -95,52 +92,88 @@
           <div class="panel-footer">
               <div class="text-center">
                  <%= f.submit "物資新規登録 ", class: "btn btn-large btn-primary" %>
-                <button type="button" class="btn btn-success">削除</button>
             </div>
             <% end %>
           </div>
          </div>
  </div>
-
-
+<div class="col-sm-7">
+<div class="panel panel-default">
+  <div class="panel-heading">物資在検索フォーム</div><th class="active">
+  <div class="panel-body">
+  	物資在庫表に登録されている物資を検索できます
+  	 <%= search_form_for @q, url: {controller: :reliefs, action: :index} do |f| %>
+  　　　　 <table class="table table-bordered" >
+  　　　　 	<tbody>
+  　　　　 	<tr>
+				<th class="active"><%= f.label :gs_name, "商品名" %></th>
+				<td><%= f.search_field :gs_name_cont %></td>
+			</tr>
+		　<tr>
+				<th class="active"><%= f.label :gs_name, "物資サイズ" %></th>
+				<td><%= f.search_field :gs_goodsSize_cont %></td>
+			</tr>
+			<th class="active">在庫数</th>
+			<td><%= f.search_field :gs_NowNum_lt %>　~　<%= f.search_field :gs_NowNum_gt %></td>
+		</tr>
+		<tr>
+			<th class="active">不足数</th>
+			<td><%= f.search_field :gs_shortages_lt %>　~　<%= f.search_field :gs_shortages_gt %></td>
+		</tr>
+		<tr>
+			<th class="active">不要数</th>
+			<td><%= f.search_field :goos_note_lt %>　~　<%= f.search_field :goos_note_gt %></td>
+				</tr>
+				<tr>
+				<th rowspan="2" class="active">賞味期限</th>
+				<td><%= f.datetime_select :gs_BestbeforEnd_lt, :use_month_numbers => true,　include_blank: true, default: nil %><%= f.label :gs_BestbeforeStart_gt, "以上" %><br>
+				<%= f.datetime_select :gs_BestbeforeStart_gt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforEnd_lt, "以下" %></td>
+				</tr>
+				<tr>
+		</table>
+		<div class="text-center">
+  	   <%= f.submit "物在検索 ", class: "btn btn-large btn-primary"%>
+  	    </div>
+         <% end %>
+  </div>
+</div>
+</div>
 <div class="col-sm-7">  
   <div class="panel panel-warning">
     <div class="panel-heading">物資在庫表</div>
 　　　物資在庫登録フォームから登録された内容が表示されてます。
-      
-   <table class="table table-bordered" >
-	<tbody>
-		<tr class="warning">
-			<th rowspan="2">物資№</th>
-			<th rowspan="2">品名</th>
-			<th colspan="2">物資</th>
-		   <th colspan="3">物資詳細</th>
-		   <th rowspan="2">手続き</th>
-		</tr>
-		<tr class="warning">
-			<th>種目</th>
-			<th>サイズ</th>
-			<th>在庫数</th>
-			<th>不足数</th>
-			<th>余剰数</th>
-		</tr>
-			<% @reliefs.each do |relief| %>
-		</tr>
-			<td><%= relief.id %></td>
-			<td><%= relief.gs_name %></td>
-			<td><%= relief.gs_sizeEvent %></td>
-			<td><%= relief.gs_goodsSize %></td>
-			<td><%= relief.gs_NowNum %></td>
-			<td style="color:red;"><%= relief.gs_shortages %></td>
-			<td style="color:blue;"><%= relief.gs_ExtraParts %></td>
-			<td><%= link_to "詳細" ,edit_relief_path(relief) %><br>
-        <%= link_to "削除" , relief , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
-        </td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-
+	   <table class="table table-bordered" >
+		<tbody>
+			<tr class="warning">
+				<th rowspan="2">物資№</th>
+				<th rowspan="2">品名</th>
+				<th colspan="2">物資</th>
+			   <th colspan="3">物資詳細</th>
+			   <th rowspan="2">手続き</th>
+			</tr>
+			<tr class="warning">
+				<th>種目</th>
+				<th>サイズ</th>
+				<th>在庫数</th>
+				<th>不足数</th>
+				<th>余剰数</th>
+			</tr>
+				<% @reliefs.each do |relief| %>
+			</tr>
+				<td><%= relief.id %></td>
+				<td><%= relief.gs_name %></td>
+				<td><%= relief.gs_sizeEvent %></td>
+				<td><%= relief.gs_goodsSize %></td>
+				<td><%= relief.gs_NowNum %></td>
+				<td style="color:red;"><%= relief.gs_shortages %></td>
+				<td style="color:blue;"><%= relief.gs_ExtraParts %></td>
+				<td><%= link_to "詳細" ,edit_relief_path(relief) %><br>
+	        <%= link_to "削除" , relief , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+	        </td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
  </div>
 </div>
 　

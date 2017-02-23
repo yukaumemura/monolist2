@@ -1,4 +1,7 @@
 class Relief < ActiveRecord::Base
+ 
+  has_many :products
+  
     #バリで設定
     #品名は200文字以内で必須項目
     validates :gs_name, length: { maximum: 200 }, presence: true

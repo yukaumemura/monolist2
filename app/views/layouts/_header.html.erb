@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-inner">
         <div class="navbar-header">
@@ -9,9 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <h1 class="logo">
-            <%= link_to "relief goods", root_path %>
-          </h1>
+          <h1 class="logo"><%= link_to "relief goods", root_path %></h1>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -29,9 +27,10 @@
                   物資ネット検索
                 <% end %>
               </li>
-              　<li><%= link_to "物資在庫検索", reliefs_new_path %></li>
+              
+              　<li><%= link_to "物情配信登録", relief_StockRegist_path %></li>
                <li><%= link_to "物資在庫登録", reliefs_index_path %></li>
-　　　　　　　<li><%= link_to "物情配信登録", products_index_path %></li>
+　　　　　　　<li><%= link_to "物資在庫検索", reliefs_serch_path %></li>
               <li><%= link_to "避難者情報", relief_list_path %></li>
               <li><%= link_to "製作内容未定", relief_stock_path %></li>
               <li class="dropdown">

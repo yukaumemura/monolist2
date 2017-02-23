@@ -1,0 +1,44 @@
+ <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		     　<%= f.label :gs_sizeEvent, "物資種目" %>
+		      <%= f.search_select :gs_sizeEvent %>
+		      
+		      <%= f.label :gs_goodsSize, "物資サイズ" %>
+		      <%= f.search_field :gs_goodsSize %>
+		      
+		      <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		      <%= f.label :gs_BestbeforeStart_gt, "開始" %>
+		      <%= f.search_field :gs_BestbeforeStart_gt %>
+		      
+		      <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		 　　　　<%= f.label :gs_BestbeforEnd_lt, ",終了" %>
+		 　　　<%= f.search_field :gs_BestbeforEnd_lt %>
+		 　　　
+		 　　　<%= f.label :gs_NowNum_gt, "最大" %>
+		      <%= f.search_field :gs_NowNum_gt %>
+		      
+		      <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		 　　　　<%= f.label :gs_NowNum_lt, "最小" %>
+		 　　　<%= f.search_field :gs_NowNum_gt %>
+		　　　
+		　　　<%= f.label :gs_shortages_gt, "最大" %>
+		      <%= f.search_field :gs_shortages_lt %>~<%= f.search_field :gs_shortages_gt %>
+		      
+		      <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		 　　　　<%= f.label :gs_shortages_lt, "最小" %>
+		 　　　<%= f.search_field :gs_shortages_lt %>
+		　　　
+		　　　<%= f.label :goos_note_gt, "最大" %>
+		      <%= f.search_field :goos_note_lt %>~<%= f.search_field :goos_note_gt %>
+		      
+		      <%# lt で特定の数値より下で検索（gt はより上、eq は同じ、gteqやlteqなどもできる） %>
+		 　　　　<%= f.label :goos_note_lt, "不要数最大" %>
+		 　　　<%= f.search_field :goos_note_gt %>
+		 　　　
+		          	<th rowspan="2" class="active">賞味期限</th>
+				　<th class="active"><%= f.label :gs_BestbeforEnd_lt, "以下" %></th>
+					<td colspan="4"><%= f.datetime_select :gs_BestbeforEnd_lt %></td>
+				</tr>
+				<tr>
+					<th class="active"><%= f.label :gs_BestbeforeStart_gt, "以上" %></th>
+					<td colspan="4"><%= f.datetime_select :gs_BestbeforeStart_gt %></td>
+				</tr>

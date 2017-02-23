@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   get 'reliefs/new'
 
   get 'reliefs/index'
-
+  get 'reliefs/serch'
   get 'relief/Stocklist'
-
   get 'relief/StockRegist'
   get 'guidelines/news'
   get 'relief/stock'

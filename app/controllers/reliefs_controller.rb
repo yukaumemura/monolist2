@@ -3,16 +3,19 @@ class ReliefsController < ApplicationController
   # has_many :products
   # a belongs_to :relief
   def index
-   @relief = Relief.new
-   @reliefs= Relief.all
-  
+    @relief = Relief.new
+    @q        = Relief.search(params[:q])
+    @reliefs = @q.result(distinct: true)
   end
   
   def new
    @relief = Relief.new
-  
   end
   
+  def serch
+  @reliefs = Relief.all
+  end
+
   def edit
    @relief = Relief.find(params[:id])
   end
@@ -30,16 +33,18 @@ class ReliefsController < ApplicationController
       end
   end
   
-  def update
-    if @reliefs.update(relief_params)
-      # 保存に成功した場合はトップページへリダイレクト
-      redirect_to root_path , notice: '編集しました'
-    else
-      # 保存に失敗した場合は編集画面へ戻す
-      render 'edit'
-    end
-  end
+ def update
 
+    @relief = Relief.find(params[:id])
+   if @relief.update(relief_params)
+     # 保存に成功した場合はトップページへリダイレクト
+     redirect_to root_path , notice: '編集しました'
+   else
+     # 保存に失敗した場合は編集画面へ戻す
+     render 'edit'
+   end
+ end
+  
   def destroy
     @relief = Relief.find(params[:id])
     @relief.destroy
@@ -47,7 +52,7 @@ class ReliefsController < ApplicationController
   end
   
    def set_reliefs
-    @relief = Relief.find(params[:gs_ID])
+    @relief = Relief.find(params[:id])
   end
 
   private

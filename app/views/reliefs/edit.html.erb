@@ -1,8 +1,5 @@
-<h1>Reliefs#edit</h1>
-<p>Find me in app/views/reliefs/edit.html.erb</p>
-
 <%= form_for(@relief) do |f| %>
-<div class="col-sm-8">  
+<div class="col-sm-5">  
 <div class="panel panel-success">
   <div class="panel-heading">物資在庫修正フォーム</div>
     <div class="panel-body">
@@ -57,11 +54,11 @@
 			<th rowspan="2" class="success">使用期限</th>
 			<th class="success">開始</th>
 			<td><label>食料品等で使用期限がある場合に記入</label><br>
-				<%= f.text_field:gs_BestbeforeStart, class: "form-control input-sm", placeholder: "2017/02/09㈮" %></td>
+				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
 		</tr>
 		<tr>
 			<th class="success">終了</th>
-			<td><%= f.text_field:gs_BestbeforEnd, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
+			<td><%= f.datetime_select :gs_BestbeforEnd, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
 		</tr>
 		<tr>
 		    <th rowspan="3" class="success">物資詳細</th>
