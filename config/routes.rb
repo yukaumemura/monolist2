@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  #get 'supply_infos/edit'
+
+  get 'supply_infos/index'
+
+ resources :supply_infos ,only: [:new, :create, :destroy, :edit, :update]
+  #get 'suppliesinfos/index'
+
   resources :products
   get 'reliefs/rist'
 

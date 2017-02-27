@@ -9,10 +9,7 @@
 <div class="col-sm-4">  
 <div class="panel panel-success">
   <div class="panel-heading">物資在庫登録フォーム</div>
-
     <div class="panel-body">
-    
-
           <%= form_for(@relief) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           <table class="table table-bordered" >
@@ -59,31 +56,31 @@
 			<th rowspan="2" class="success">使用期限</th>
 			<th class="success">開始</th>
 			<td><label>食料品等で使用期限がある場合に記入</label><br>
-				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
+				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
 		</tr>
 		<tr>
 			<th class="success">終了</th>
-			<td><%= f.datetime_select :gs_BestbeforEnd,:use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
+			<td><%= f.datetime_select :gs_BestbeforEnd,:use_month_numbers => true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %></td>
 		</tr>
 		<tr>
 		    <th rowspan="3" class="success">物資詳細</th>
 			<th class="success">在庫数</th>
-			<td><label>現在その物資が今どれだけ所持しているか</label>
+			<td><label>今どれだけ所持しているか</label>
 				<%= f.text_field:gs_NowNum, class: "form-control input-sm", placeholder: "1234,1234,1234,1234" %></td>
 		</tr>
 		<tr>
 			<th class="success">不足数</th>
-			<td><label>現在その物資が今どれだけ不足しているか</label>
+			<td><label>今どれだけ不足しているか</label>
 				<%= f.text_field:gs_shortages, class: "form-control input-sm", placeholder: "30" %></td>
 		</tr>
 			<tr>
 			<th class="success">余剰数</th>
-			<td><label>現在その物資が今どれだけいらないか</label>
+			<td><label>今どれだけいらないか</label>
 				<%= f.text_field:gs_ExtraParts, class: "form-control input-sm", placeholder: "30" %></td>
 		</tr>
 		<tr>
 			<th class="success" colspan="2">備考</th>
-			<td><%= text_area :goos_note, :comtent, :size => "42x5" %></td>
+			<td><%= text_area :goos_note, :comtent, :size => "35x5" %></td>
 		</tr>
 	</tbody>
 </table>
@@ -97,6 +94,7 @@
           </div>
          </div>
  </div>
+
 <div class="col-sm-7">
 <div class="panel panel-default">
   <div class="panel-heading">物資在検索フォーム</div><th class="active">
@@ -126,13 +124,14 @@
 				</tr>
 				<tr>
 				<th rowspan="2" class="active">賞味期限</th>
-				<td><%= f.datetime_select :gs_BestbeforEnd_lt, :use_month_numbers => true,　include_blank: true, default: nil %><%= f.label :gs_BestbeforeStart_gt, "以上" %><br>
+				<td><%= f.datetime_select :gs_BestbeforEnd_lt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforeStart_gt, "以上" %><br>
 				<%= f.datetime_select :gs_BestbeforeStart_gt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforEnd_lt, "以下" %></td>
 				</tr>
 				<tr>
 		</table>
 		<div class="text-center">
   	   <%= f.submit "物在検索 ", class: "btn btn-large btn-primary"%>
+  	   
   	    </div>
          <% end %>
   </div>

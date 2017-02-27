@@ -1,0 +1,63 @@
+<div class="panel panel-default">
+  <div class="panel-heading">物上配信登録</div>
+  <div class="panel-body">
+      物資情報配信登録フォームからこちらから支援物資の不足品や余剰品を入力して下さい。<br>
+        <P style="color:red;">特に困っており対処の必要性が優先順位的に高い順に入力すると補給部隊等の関係者が理解しやすいです。</p>
+        不足数と余剰数は1千兆（1,000,000,000,000,000)まで入力可能<br>
+        このフォームの項目について<br>
+        <li>不足品は今欲しい支援物資</li>
+         <li>余剰品は今在庫状況的にいらないので誰かにあげたい支援物資</li>
+          <li>段ボール数は１つ箱の中に支援物資がある状態<br>
+          <例>たばこ1箱が最大12個収納でその中身が12個ある場合は１つとしてカウント。</li>
+          <li>単数は段ボールに入らず残った数<br>
+          <例>たばこ1箱が最大12個収納でその中身が10個ある場合は10個としてカウント</li>
+  </div>
+</div>
+<%= render 'supply_infos/form' %>
+<%= render 'supply_infos/address' %>
+
+
+<div class="col-sm-12">  
+    <div class="panel panel-default">
+      <div class="panel-heading">物資情報配信登録結果</div>
+      <div class="panel-body">
+         <table class="table table-bordered">
+        	<tbody>
+        		<tr class="active">
+        		    <th rowspan="2">配信物資番号</th>
+        			<th rowspan="2">物資名</th>
+        			<th colspan="2">希望物資</th>
+        			<th colspan="2">不足品</th>
+        			<th colspan="2">余剰品</th>
+        			<th rowspan="2">備考</th>
+        			<th rowspan="2">手続</th>
+        		</tr>
+        		<tr class="active">
+        			<th>種目</th>
+        			<th>サイズ</th>
+        			<th>段ボール</th>
+        			<th>単数</th>
+        			<th>段ボール</th>
+        			<th>単数</th>
+        		</tr>
+        		<tr>
+        		    <% @supplyinfos.each do |supply_info| %>
+        		   	<td><%= supply_info.id %></td>
+        			<td><%= supply_info.shs_name %></td>
+        			<td><%= supply_info.shs_sizeEvent %></td>
+        			<td><%= supply_info.shs_goodsSize %></td>
+        			<td><%= supply_info.shs_Lackofgdsdbox %></td>
+        			<td><%= supply_info.shs_Lackofgds %></td>
+        			<td><%= supply_info.shs_Surplusitemdbox %></td>
+        		　　<td><%= supply_info.shs_Surplusitem %></td>
+        			<td><%= supply_info.shs_note %></td>
+        			<td></td>
+        		</tr>
+        			<% end %>
+        	</tbody>
+        </table> 
+        
+      </div>
+    </div>
+</div>
+	

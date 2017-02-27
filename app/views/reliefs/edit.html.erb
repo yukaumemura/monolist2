@@ -54,11 +54,11 @@
 			<th rowspan="2" class="success">使用期限</th>
 			<th class="success">開始</th>
 			<td><label>食料品等で使用期限がある場合に記入</label><br>
-				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
+				<%= f.datetime_select :gs_BestbeforeStart, :use_month_numbers => true, include_blank: true, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
 		</tr>
 		<tr>
 			<th class="success">終了</th>
-			<td><%= f.datetime_select :gs_BestbeforEnd, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
+			<td><%= f.datetime_select :gs_BestbeforEnd, :use_month_numbers => true, include_blank: true, class: "form-control input-sm", placeholder: "2017/02/10㈯" %>
 		</tr>
 		<tr>
 		    <th rowspan="3" class="success">物資詳細</th>

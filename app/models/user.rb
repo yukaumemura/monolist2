@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
   has_many :haves, class_name: 'Have', foreign_key: 'user_id', dependent: :destroy
   has_many :have_items, through: :haves, source: :item
 
+  has_many :supply_infos
+  
   # 会員登録
   # ユーザーの写真を登録できるようにする
     mount_uploader :userpicture, UserpictureUploader

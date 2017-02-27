@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222031422) do
+ActiveRecord::Schema.define(version: 20170224113631) do
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20170222031422) do
     t.integer  "gs_dbweight"
     t.integer  "gs_dbboxcount"
     t.integer  "gs_dbboxsize"
-    t.date     "gs_BestbeforEnd"
-    t.date     "gs_BestbeforeStart"
+    t.datetime "gs_BestbeforEnd"
+    t.datetime "gs_BestbeforeStart"
     t.integer  "gs_NowNum"
     t.integer  "gs_shortages"
     t.string   "goos_note"
@@ -76,6 +76,23 @@ ActiveRecord::Schema.define(version: 20170222031422) do
     t.datetime "updated_at",         null: false
     t.integer  "gs_ExtraParts"
   end
+
+  create_table "supply_infos", force: :cascade do |t|
+    t.datetime "shs_today"
+    t.string   "shs_name"
+    t.string   "shs_sizeEvent"
+    t.string   "shs_goodsSize"
+    t.integer  "shs_Lackofgdsdbox"
+    t.integer  "shs_Lackofgds"
+    t.integer  "shs_Surplusitemdbox"
+    t.integer  "shs_Surplusitem"
+    t.integer  "shs_note"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "user_id"
+  end
+
+  add_index "supply_infos", ["user_id"], name: "index_supply_infos_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

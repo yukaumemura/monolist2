@@ -1,0 +1,14 @@
+<% @reliefs.each do |relief| %>
+			</tr>
+				<td><%= supply_info.id %></td>
+				<td><%= supply_info.shs_name %></td>
+				<td><%=supply_info.shs_sizeEvent %></td>
+				<td><%= supply_info.shs_goodsSize %></td>
+				<td><%= supply_info.shs_NowNum %></td>
+				<td style="color:red;"><%= supply_info.shs_shortages %></td>
+				<td style="color:blue;"><%= supply_infof.shs_ExtraParts %></td>
+				<td><%= link_to "詳細" ,edit_relief_path(supply_info) %><br>
+	        <%= link_to "削除" ,supply_info , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+	        </td>
+			</tr>
+			<% end %>

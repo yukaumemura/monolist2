@@ -16,10 +16,6 @@ class ReliefsController < ApplicationController
   @reliefs = Relief.all
   end
 
-  def edit
-   @relief = Relief.find(params[:id])
-  end
-  
   def create
    @relief =Relief.new(relief_params)
     if @relief.save
@@ -32,6 +28,10 @@ class ReliefsController < ApplicationController
         render 'index'
       end
   end
+  
+ def edit
+   @relief = Relief.find(params[:id])
+  end 
   
  def update
 

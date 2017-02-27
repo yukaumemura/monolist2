@@ -7,11 +7,21 @@
 <% end %>
 <%= render 'profile' , user: @user %>
 
-<% if @user.userpicture? %>
+
+　
+　<table>
+	<tbody>
+		<tr>
+			<td>ユーザー写真</td>
+			<td><% if @user.userpicture? %>
 　　<%= image_tag @user.userpicture.thumb.url %>
 　<% else %>
 　　<%= image_tag 'noimage.gif' %>
 　<% end %>
-　
+　</td>
+		</tr>
+	</tbody>
+</table>
+
 　<h3>楽天から欲しいものと持ってるもののメモ</h3>
 　<%= render 'items/list' , items: @items %>
