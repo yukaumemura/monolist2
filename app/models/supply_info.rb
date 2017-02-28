@@ -2,7 +2,7 @@ class SupplyInfo < ActiveRecord::Base
 #物情配信登録(災害物資の仕分けで発生した不足余剰品が発生した場合に配信するページ）のバリデ
 #配信日時はdatatime型で必須
 
-
+has_many :deliveries
 #物資名は文字型で必須項目
 validates :shs_name, presence: true   
     
@@ -30,7 +30,7 @@ validates :shs_Surplusitemdbox, presence: true,numericality: { only_integer: tru
 validates :shs_Surplusitem, presence: true,numericality: { only_integer: true }
 
 #備考は文字型で何かあれば記入
-validates :shs_note, length: { minimum: 2, maximum: 300 }, allow_blank: true
+validates :shs_note, length: { minimum: 0, maximum: 300 }, allow_blank: true
 
 
 end

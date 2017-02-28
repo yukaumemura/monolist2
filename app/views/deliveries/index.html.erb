@@ -1,41 +1,57 @@
 <p id="notice"><%= notice %></p>
 
-<h1></h1>
+<div class="col-sm-8">
 <div class="panel panel-info">
   <div class="panel-heading">お届け先情報</div>
-  <div class="panel-body">現在、あなたが設定している支援物資の届け先です。</div>
+  <div class="panel-body">
+    現在、あなたが設定している支援物資の届け先です。<br>
+    コメント欄にボランティア募集やあなたがいる場所の注意喚起などをする良いです。
+  </div>
+<% @deliveries.each do |delivery| %>
 <table class="table table-bordered">
-  <thead>
-    <tr class="info">
-      <th width="80">郵便番号</th>
-      <th>都道府県</th>
-      <th>市区町村</th>
-      <th>番地以下</th>
-      <th>建物名</th>
-      <th>連絡先</th>
-      <th>備考</th>
-      <th>手続き</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @deliveries.each do |delivery| %>
-      <tr>
-        <td><%= delivery.dly_posnum %></td>
-        <td><%= delivery.dly_prefectures %></td>
-        <td><%= delivery.dly_municipality %></td>
-        <td><%= delivery.dly_streetnum %></td>
-        <td><%= delivery.dly_bill %></td>
-        <td><%= delivery.dly_contacts %></td>
-        <td><%= delivery.dly_remarks %></td>
-        <td width="80"><%= link_to '詳細', delivery %><br>
-        <%= link_to '変更', edit_delivery_path(delivery) %><br>
-        <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+	<tbody>
+	  <tr>
+			<th width="150">フリガナ</th>
+			<td><%= delivery.dly_posnum %></td>
+		</tr>
+	  <tr>
+			<th width="150">依頼者名</th>
+			<td><%= delivery.dly_posnum %></td>
+		</tr>
+		<tr>
+			<th>郵便番号</th>
+			<td><%= delivery.dly_posnum %></td>
+		</tr>
+		<tr>
+		<th>都道府県</th>
+		 <td><%= delivery.dly_prefectures %></td>
+		</tr>
+		<tr>
+			<th>市区町村</th>
+			<td><%= delivery.dly_municipality %></td>
+		</tr>
+		<tr>
+			<th>番地以下</th>
+			<td><%= delivery.dly_streetnum %></td>
+		</tr>
+		<tr>
+		<th>建物名</th>
+			<td><%= delivery.dly_bill %></td>
+		</tr>
+		<tr>
+			<th>連絡先</th>
+			<td><%= delivery.dly_contacts %></td>
+		</tr>
+		<tr>
+		<th>コメント</th>
+			<td><%= delivery.dly_remarks %></td>
+		</tr>
+		</tr>
+	</tbody>
 </table>
-<div class="panel-footer"><%= link_to '新規お届け先設定', new_delivery_path %></div>
-</div>
-<br>
 
+ <div class="panel-footer"><%= link_to '新規お届け先設定', new_delivery_path %>｜<%= link_to '詳細', delivery %>｜ <%= link_to '変更', edit_delivery_path(delivery) %>｜
+ <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
+</div>
+ <% end %>
+ </div>

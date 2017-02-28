@@ -1,4 +1,6 @@
 class Delivery < ActiveRecord::Base
+    #delibery.rb
+    belongs_to :supply_info
     #お届け先郵便番号は文字型で必須
 validates :dly_posnum, presence: true
 

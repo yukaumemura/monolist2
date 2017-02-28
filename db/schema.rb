@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228024612) do
+ActiveRecord::Schema.define(version: 20170228100721) do
 
   create_table "deliveries", force: :cascade do |t|
     t.string   "dly_posnum"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170228024612) do
     t.string   "dly_remarks"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "supply_info_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 20170228024612) do
     t.string   "shs_bill"
     t.string   "shs_contacts"
     t.string   "shs_remarks"
+    t.integer  "supply_info_id"
   end
 
   add_index "supply_infos", ["user_id"], name: "index_supply_infos_on_user_id"

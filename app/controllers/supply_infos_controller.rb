@@ -1,6 +1,7 @@
 class SupplyInfosController < ApplicationController
   before_action :set_supply_infos, only: [:edit, :update]
   def index
+  @deliveries = Delivery.all
   @supplyinfos = SupplyInfo.all
   @supplyinfo = SupplyInfo.new
   end

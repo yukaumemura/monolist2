@@ -36,7 +36,7 @@ gem 'pry-byebug', group: :development　#でバックツール
 # https://github.com/rakuten-ws/rws-ruby-sdk
 gem 'rakuten_web_service'
 
-
+gem 'bootstrap-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do

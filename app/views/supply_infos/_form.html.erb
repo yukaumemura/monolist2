@@ -1,15 +1,12 @@
-<div class="col-sm-5"> 
- <div class="panel panel-default">
+    　 <div class="col-sm-4">
+      　　　　　<div class="panel panel-default">
        <div class="panel-heading">不足余剰品リスト登録フォーム</div>
-      <div class="panel-body"> (すべて入力必須）</div>
-    
+      <div class="panel-body"> (すべて入力必須）サイズがわからない場合はなしと入力してください</div>
     　 <% @supplyinfo = SupplyInfo.new unless @supplyinfo %>
-       <%= form_for(@supplyinfo) do |f| %>
-       
        <% if @supplyinfo.errors.any? %>
           <div id="error_explanation">
             <div class="alert alert-danger">
-              The form contains <%= pluralize(@supplyinfo.errors.count, "error") %>.
+              The form contains <%= pluralize(@supplyinfo.errors.count, "エラーが見つかりました") %>.
             </div>
             <ul>
             <% @supplyinfo.errors.full_messages.each do |msg| %>
@@ -18,7 +15,7 @@
             </ul>
           </div>
         <% end %>
-       </div>
+        
          <%= form_for(@supplyinfo) do |f| %>
        <table class="table table-bordered">
 　  	<tbody>
@@ -55,14 +52,13 @@
 			<th class="active">備考</th>
 		    <td colspan="2"> <%= f.text_field :shs_note, class: "form-control", placeholder: "何らかの追記事項をがあればご記入ください。" %></td>
         </tr>
-        <tr>
-			<th colspan="3"><%= f.submit "物在情報登録 ", class: "btn btn-large btn-primary"%></th>
-        </tr>
     	</tbody>
       </table>
-      <div class="actions">
-    <%= f.submit "お届け先個人情報登録", class: "btn btn-large btn-primary" %>
+     <div class="text-center">
+    <%= f.submit "物在情報登録 ", class: "btn btn-large btn-primary"%>
   </div>
   <% end %>
   </div>
+</div>
+</div>
 </div>
