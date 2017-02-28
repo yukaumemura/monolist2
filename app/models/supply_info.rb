@@ -32,4 +32,5 @@ validates :shs_Surplusitem, presence: true,numericality: { only_integer: true }
 #備考は文字型で何かあれば記入
 validates :shs_note, length: { minimum: 2, maximum: 300 }, allow_blank: true
 
+
 end

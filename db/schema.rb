@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224113631) do
+ActiveRecord::Schema.define(version: 20170228024612) do
+
+  create_table "deliveries", force: :cascade do |t|
+    t.string   "dly_posnum"
+    t.string   "dly_prefectures"
+    t.string   "dly_municipality"
+    t.string   "dly_streetnum"
+    t.string   "dly_bill"
+    t.string   "dly_contacts"
+    t.string   "dly_remarks"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string   "title"
@@ -90,6 +102,15 @@ ActiveRecord::Schema.define(version: 20170224113631) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "user_id"
+    t.string   "shs_sponsornamef"
+    t.string   "shs_sponsorname"
+    t.string   "shs_posnum"
+    t.string   "shs_prefectures"
+    t.string   "shs_municipality"
+    t.string   "shs_streetnum"
+    t.string   "shs_bill"
+    t.string   "shs_contacts"
+    t.string   "shs_remarks"
   end
 
   add_index "supply_infos", ["user_id"], name: "index_supply_infos_on_user_id"

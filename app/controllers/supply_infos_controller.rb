@@ -1,4 +1,3 @@
-
 class SupplyInfosController < ApplicationController
   before_action :set_supply_infos, only: [:edit, :update]
   def index
@@ -38,10 +37,10 @@ class SupplyInfosController < ApplicationController
  end
   
   def destroy
-     @supply_infos = SupplyInfo.find(params[:id])
-   　@supplyinfo.destroy
-     redirect_to root_path, notice: '配信対象の支援物資を削除しました'
-  end
+  @supply_info = SupplyInfo.find(params[:id])
+  @supply_info.destroy
+  redirect_to root_path, notice: '配信対象の支援物資を削除しました'
+end
  
   private
 
@@ -54,3 +53,4 @@ class SupplyInfosController < ApplicationController
     :shs_Lackofgdsdbox, :shs_Lackofgds,:shs_Surplusitemdbox,:shs_Surplusitem,:shs_note)
   end
 end
+

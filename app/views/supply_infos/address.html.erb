@@ -1,0 +1,61 @@
+<h1>SupplyInfos#address</h1>
+<p>Find me in app/views/supply_infos/address.html.erb</p>
+<div class="col-sm-12">  
+    <div class="panel panel-default">
+      <div class="panel-heading">支援物資在庫情報表</div>
+      <div class="panel-body">
+          <h3>お届け先個人情報</h3>
+            <table class="table table-bordered">
+        　<caption>お届け先個人情報</caption>
+　　　　　<table class="table table-bordered">
+            
+            <%= form_for(@supplyinfo) do |f| %>
+            <tbody>
+              <tr>
+			<th rowspan="2">依頼者名</th>
+			<th>フリナガ</th>
+			<td><%= f.text_field :shs_sponsornamef, class: "form-control", placeholder: "ブッシタロウ" %></td>
+		</tr>
+		<tr>
+			<th>名前</th>
+			<td><%= f.text_field :shs_sponsorname, class: "form-control", placeholder: "物資太郎" %></td>
+		</tr>
+		<tr>
+		  <tr>
+			<th colspan="2">連絡先</th>
+			<td><%= f.text_field :shs_contacts, class: "form-control", placeholder: "" %></td>
+		</tr>
+		<tr>
+			<th rowspan="5" width="10">お届け先住所</th>
+			<th width="80">郵便番号</th>
+			<td><%= f.text_field :shs_posnum, class: "form-control", placeholder: "000-000" %></td>
+		</tr>
+		<tr>
+			<th>都道府県</th>
+			<td><%= f.text_field :shs_prefectures, class: "form-control", placeholder: "愛知県" %></td>
+		</tr>
+		<tr>
+			<th>市区町村</th>
+				<td><%= f.text_field :shs_municipality, class: "form-control", placeholder: "豊田市" %></td>
+		</tr>
+		<tr>
+			<th>番地以下</th>
+				<td><%= f.text_field :shs_streetnum, class: "form-control", placeholder: "若宮町○○○×××00-00" %></td>
+		</tr>
+		<tr>
+			<th>建物名</th>
+			<td><%= f.text_field :shs_bill, class: "form-control", placeholder: "リリーフサポートビル2階" %></td>
+		</tr>
+		<tr>
+			<th colspan="2">連絡先</th>
+				<td><%= text_area :shs_contacts, class: "form-control", placeholder: "何か特記事項があれば記入", :size => "50x5" %></td>
+		</tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+                 <%= f.submit "お届け先個人情報登録", class: "btn btn-large btn-primary" %>
+            </div>
+        <% end %>
+    　</div>
+    </div>
+　</div>

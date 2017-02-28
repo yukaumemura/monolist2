@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :deliveries
+  get 'supply_infos/address'
+
   #get 'supply_infos/edit'
 
-  get 'supply_infos/index'
-
- resources :supply_infos ,only: [:new, :create, :destroy, :edit, :update]
+ resources :supply_infos
   #get 'suppliesinfos/index'
 
   resources :products

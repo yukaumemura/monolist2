@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">物上配信登録</div>
   <div class="panel-body">
-      物資情報配信登録フォームからこちらから支援物資の不足品や余剰品を入力して下さい。<br>
+      不足余剰品リスト登録フォームからこちらから支援物資の不足品や余剰品を入力して下さい。<br>
         <P style="color:red;">特に困っており対処の必要性が優先順位的に高い順に入力すると補給部隊等の関係者が理解しやすいです。</p>
         不足数と余剰数は1千兆（1,000,000,000,000,000)まで入力可能<br>
         このフォームの項目について<br>
@@ -14,14 +14,16 @@
   </div>
 </div>
 <%= render 'supply_infos/form' %>
-<%= render 'supply_infos/address' %>
 
 
 <div class="col-sm-12">  
     <div class="panel panel-default">
-      <div class="panel-heading">物資情報配信登録結果</div>
+      <div class="panel-heading">支援物資在庫情報表</div>
       <div class="panel-body">
+          <h3>お届け先個人情報</h3>
+    </div>
          <table class="table table-bordered">
+             <caption>不足余剰品リスト</caption>
         	<tbody>
         		<tr class="active">
         		    <th rowspan="2">配信物資番号</th>
@@ -51,13 +53,15 @@
         			<td><%= supply_info.shs_Surplusitemdbox %></td>
         		　　<td><%= supply_info.shs_Surplusitem %></td>
         			<td><%= supply_info.shs_note %></td>
-        			<td></td>
+        		　　<td><%= link_to "更新" , edit_supply_info_path(supply_info) %><br>
+                         <%= link_to "削除" ,supply_info, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
         		</tr>
         			<% end %>
         	</tbody>
         </table> 
-        
+        <div class="text-center">
+            	  <button type="button" class="btn btn-success  btn-lg btn-block">不足余剰品リストを配信する</button>
+  	    </div>
       </div>
     </div>
 </div>
-	
