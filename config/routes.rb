@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'supply_infos/info'
+
   resources :deliveries
   get 'supply_infos/address'
 
