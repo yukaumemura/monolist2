@@ -65,9 +65,7 @@ group :development, :test do
 
   gem 'pry-rails'
 end
-#写真追加
-gem 'rmagick'
 gem 'carrierwave'
+gem 'rmagick'
 #検索
 gem "ransack"
-gem "install twitter"
