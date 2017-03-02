@@ -1,4 +1,9 @@
 header {
+  padding:10px;
+font-family: 'Vidaloka', serif;
+text-align:center;
+font-weight:normal;
+color:#fff;
   height: 60px;
   .navbar {
     width: 100%;
@@ -29,6 +34,26 @@ header {
           }
         }
       }
+      .maintitle{
+display:block;
+font-size:72px;
+line-height:72px;
+letter-spacing:-4px;
+text-shadow:1px 1px 3px #ccc,
+1px -1px 3px #ccc,
+-1px 1px 3px #ccc,
+-1px -1px 3px #ccc;
+}
+.description{
+display:block;
+font-size:24px;
+line-height:10px;
+letter-spacing:1px;
+text-shadow:1px 1px 3px #ccc,
+1px -1px 3px #ccc,
+-1px 1px 3px #ccc,
+-1px -1px 3px #ccc;
+}
       .navbar-nav {
         li {
           a {
@@ -55,7 +80,9 @@ header {
     }
   }
 }
-
+.logo{
+  background-color:#adff2f
+}
 @media (max-width: 768px) {
   .navbar-header {
     margin-left: 15px !important;

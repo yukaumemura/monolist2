@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-sm-8">
+<div class="col-sm-7">
 <div class="panel panel-info">
   <div class="panel-heading">お届け先情報</div>
   <div class="panel-body">
     現在、あなたが設定している支援物資の届け先です。<br>
     コメント欄にボランティア募集やあなたがいる場所の注意喚起などをする良いです。
-  </div>
+
+  <%= render 'deliveries/form' %>
+   </div>
+   </div>
+     </div>
+
 <% @deliveries.each do |delivery| %>
 <table class="table table-bordered">
 	<tbody>
@@ -54,4 +59,4 @@
  <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
 </div>
  <% end %>
- </div>
+

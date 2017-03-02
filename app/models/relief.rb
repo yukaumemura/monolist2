@@ -37,6 +37,6 @@ class Relief < ActiveRecord::Base
      #○ validates:gs_ExtraParts,  presence: true, numericality: { only_integer: true }
      
     #物資詳細備考は入力されたら追加 
-    #○ validates:goos_note,  numericality: { only_integer: true }
+    validates:goos_note, length: { minimum: 0, maximum: 300 }, allow_blank: true
     
 end

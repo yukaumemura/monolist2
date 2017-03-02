@@ -57,7 +57,7 @@ class ReliefsController < ApplicationController
 
   private
   def relief_params
-    params.require(:relief).permit(:gs_ID,:gs_name, :gs_sizeEvent,:gs_goodsSize,
+    params.require(:relief).permit(:gs_name, :gs_sizeEvent,:gs_goodsSize,
     :gs_dbweight,:gs_dbboxcount,:gs_dbboxsize,:gs_BestbeforEnd,:gs_BestbeforeStart,
     :gs_NowNum,:gs_shortages,:gs_ExtraParts,:goos_note)
   end
