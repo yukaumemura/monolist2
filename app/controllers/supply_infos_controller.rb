@@ -1,26 +1,29 @@
 class SupplyInfosController < ApplicationController
   before_action :set_supply_infos,only:[:edit,:update]
+  
   def index
-  @supplyinfos=SupplyInfo.all
-  @supplyinfo=SupplyInfo.new
-   @deliveries = Delivery.all
+    @supplyinfos=SupplyInfo.all
+    @supplyinfo=SupplyInfo.new
+    @deliveries = Delivery.all
   end
   
-    def create
+  def create
+    redirect_to login_path unless !!current_user
     @supply_infos = SupplyInfo.new(supply_infos_params)
+    @supply_infos.user_id = current_user.id
     
     if @supply_infos.save
       redirect_to root_path , notice: '災害物資の保存しました'
     else
-        # メッセージが保存できなかった時
-       @supplyinfos = SupplyInfo.all
-        flash.now[:alert] = "保存失敗しました。"
-        render 'index'
-      end
+      # メッセージが保存できなかった時
+      @supplyinfos = SupplyInfo.all
+      flash.now[:alert] = "保存失敗しました。"
+      render 'index'
+    end
   end
   
-   def edit
-   @supplyinfo=SupplyInfo.find(params[:id])
+  def edit
+    @supplyinfo=SupplyInfo.find(params[:id])
   end 
   
   def update
@@ -41,6 +44,17 @@ class SupplyInfosController < ApplicationController
    @supplyinfo=SupplyInfo.find(params[:id])
     @supplyinfo.destroy
     redirect_to root_path, notice: '削除しました'
+  end
+  
+  #def info
+  #  SupplyInfo.destroy_all(user_id: current_user.id)
+   # redirect_to root_path , notice: '災害物資情報の配信を停止しました'
+  #end
+  
+  def disasterinfo
+    SupplyInfo
+    Delivery
+   redirect_to root_path , notice: '災害物資情報の配信を新規配信しました'
   end
   
   def set_supply_infos

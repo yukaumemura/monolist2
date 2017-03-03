@@ -103,19 +103,8 @@ ActiveRecord::Schema.define(version: 20170228100721) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.integer  "user_id"
-    t.string   "shs_sponsornamef"
-    t.string   "shs_sponsorname"
-    t.string   "shs_posnum"
-    t.string   "shs_prefectures"
-    t.string   "shs_municipality"
-    t.string   "shs_streetnum"
-    t.string   "shs_bill"
-    t.string   "shs_contacts"
-    t.string   "shs_remarks"
-    t.integer  "supply_info_id"
+    t.integer  "shs_dlyid"
   end
-
-  add_index "supply_infos", ["user_id"], name: "index_supply_infos_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

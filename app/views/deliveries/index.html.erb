@@ -6,18 +6,17 @@
   <div class="panel-body">
     現在、あなたが設定している支援物資の届け先です。<br>
     コメント欄にボランティア募集やあなたがいる場所の注意喚起などをする良いです。
-
   <%= render 'deliveries/form' %>
    </div>
-   </div>
-     </div>
+  </div>
+</div>
 
 <% @deliveries.each do |delivery| %>
 <table class="table table-bordered">
 	<tbody>
 	  <tr>
 			<th width="150">フリガナ</th>
-			<td><%= delivery.dly_posnum %></td>
+			<td></td>
 		</tr>
 	  <tr>
 			<th width="150">依頼者名</th>
