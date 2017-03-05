@@ -69,3 +69,7 @@ gem 'carrierwave'
 gem 'rmagick'
 #検索
 gem "ransack"
+#twitter
+gem 'twitter'
+gem 'minimum-omniauth-scaffold'
+gem 'haml'

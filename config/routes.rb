@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'transport/index'
+   resources :offers , only: [:new]
+  get 'rails/generate'
+
+  get 'rails/supply_infos'
+
+  get 'rails/show'
+
   get 'supply_infos/info'
 
-  resources :deliveries
+  resources :deliveries do
+     member do
+      get 'supply_infos'
+    end
+  end
   get 'supply_infos/address'
 
   #get 'supply_infos/edit'

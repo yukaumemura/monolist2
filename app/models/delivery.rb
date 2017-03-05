@@ -1,6 +1,9 @@
 class Delivery < ActiveRecord::Base
     #delibery.rb
-    belongs_to :supply_info
+    has_many :supply_infos , through: :user
+    belongs_to :user
+   #お届け先郵便番号は文字型で必須
+validates :dly_name, presence: true  
     #お届け先郵便番号は文字型で必須
 validates :dly_posnum, presence: true
 

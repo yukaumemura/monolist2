@@ -1,0 +1,49 @@
+<div class="panel panel-warning">
+  <div class="panel-heading">物上配信登録</div>
+  <div class="panel-body">
+      不足余剰品リスト登録フォームからこちらから支援物資の不足品や余剰品を入力して下さい。<br>
+        <P style="color:red;">特に困っており対処の必要性が優先順位的に高い順に入力すると補給部隊等の関係者が理解しやすいです。</p>
+        不足数と余剰数は1千兆（1,000,000,000,000,000)まで入力可能<br>
+        このフォームの項目について<br>
+        <li>不足品は今欲しい支援物資</li>
+         <li>余剰品は今在庫状況的にいらないので誰かにあげたい支援物資</li>
+          <li>段ボール数は１つ箱の中に支援物資がある状態→<例>たばこ1箱が最大12個収納でその中身が12個ある場合は１つとしてカウント。</li>
+          <li>単数は段ボールに入らず残った数→
+          <例>たばこ1箱が最大12個収納でその中身が10個ある場合は10個としてカウント</li>
+  </div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">支援物資配信登録</div>
+  <div class="panel-body">
+      <h3>やり方について</h3>
+      <li>Excelに仕分け内容を新規登録保存→ファイル名：○○県○○市物資太郎-支援物資情報表</li>
+      <li>ファイル名：○○県○○市物資太郎-支援物資情報表グーグルドライブに新規登録し、共有可能リンクをコピー貼付け</li>
+      </div>
+
+ <table class="table">
+	<tbody>
+		<tr class="info">
+			<th rowspan="2" >依頼配信番号</th>
+			<th rowspan="2">配信日時</th>
+			<th rowspan="2">依頼者名</th>
+			<td colspan="2">依頼地域</td>
+			<th rowspan="2">物資詳細</th>
+			<th rowspan="2"></th>
+		</tr>
+		<tr class="info">
+			<th>都道府県</th>
+			<th>市区町村</th>
+		</tr>
+		<tr><%= form_for(@transport) do |f| %>
+			<td><%= f.text_field :id %></td>
+			<td><%= f.text_field :exe_time %></td>
+			<td><%= f.text_field :exe_name %></td>
+			<td><%= f.text_field :exe_name %></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+<% end %>
+</div>

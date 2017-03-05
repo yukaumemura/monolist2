@@ -18,6 +18,7 @@ class SupplyInfosController < ApplicationController
       # メッセージが保存できなかった時
       @supplyinfos = SupplyInfo.all
       flash.now[:alert] = "保存失敗しました。"
+@deliveries = Delivery.where(user_id: current_user.id)
       render 'index'
     end
   end
@@ -46,11 +47,20 @@ class SupplyInfosController < ApplicationController
     redirect_to root_path, notice: '削除しました'
   end
   
-  #def info
+  def info
+     @supplyinfos = SupplyInfo.group(:user_id)
+     @supplyinfos=SupplyInfo.all
+    @deliveries = Delivery.all
+    #＠d = Delivery.all
   #  SupplyInfo.destroy_all(user_id: current_user.id)
    # redirect_to root_path , notice: '災害物資情報の配信を停止しました'
-  #end
-  
+  end
+  #配信ページ用リンク
+  def show
+    @supplyinfos=SupplyInfo.all
+    @deliveries = Delivery.all
+     @supplyinfos = SupplyInfo.all
+  end
   def disasterinfo
     SupplyInfo
     Delivery

@@ -2,19 +2,16 @@
     <div class="panel panel-danger">
       <div class="panel-heading">支援物資配達依頼表</div>
       <div class="panel-body">
-           <h3>お届け依頼日</h3>
-           
-           <h3>お届け先情報</h3>
+           <h3>お届け依頼日
+            <% @supplyinfos.each do |supply_info| %>
+            <%= supply_info.shs_today %>
+           <% end %>
+           </h3>
           現在のお届け先はこちらになってます。変更する場合は「変更リンク」からクリックしてください。
         　
           <% @deliveries.each do |delivery| %>
 <table class="table table-bordered">
 	<tbody>
-		 <tr>
-			<th width="150" class="danger">お届け先ID</th>
-			<td><%= delivery.user_id %></td>
-		</tr>
-		<tr>
 	  <tr>
 			<th width="150" class="danger">依頼者名</th>
 			<td><%= delivery.dly_name %></td>
@@ -50,10 +47,6 @@
 		</tr>
 	</tbody>
 </table>
-
- <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜<%= link_to '詳細', delivery %>｜ <%= link_to '変更', edit_delivery_path(delivery) %>｜
- <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
-</div>
  <% end %>
 
          <table class="table table-bordered">
@@ -66,7 +59,6 @@
         			<th colspan="2">不足品</th>
         			<th colspan="2">余剰品</th>
         			<th rowspan="2">備考</th>
-        			<th rowspan="2">手続</th>
         		</tr>
         		<tr class="active">
         			<th>種目</th>
@@ -87,19 +79,11 @@
         			<td><%= supply_info.shs_Surplusitemdbox %></td>
         		　　<td><%= supply_info.shs_Surplusitem %></td>
         			<td><%= supply_info.shs_note %></td>
-        		　　<td><%= link_to "更新" , edit_supply_info_path(supply_info) %><br>
-                         <%= link_to "削除" ,supply_info, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
         		</tr>
-        		<% end %>	
+        			<% end %>
         	</tbody>
         </table> 
-        <%= form_for(@supplyinfo) do |f| %>
-        <div class="text-center">
-        　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
-           <button type="button" class="btn btn-success">支援物資情報を配信する</button>
-           <button type="button" class="btn btn-success">支援物資情報を配信停止</button>
-  	    </div>
-  	    <% end %>
+        
       </div>
     </div>
 </div>

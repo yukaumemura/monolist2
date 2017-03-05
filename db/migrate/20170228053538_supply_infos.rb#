@@ -1,5 +1,5 @@
 class SupplyInfos < ActiveRecord::Migration
   def change
-    add_column :supply_infos, :shs_dlyid, :integer
+    add_column :supply_infos, :users_id, :integer
   end
 end

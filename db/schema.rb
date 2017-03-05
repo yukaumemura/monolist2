@@ -23,7 +23,10 @@ ActiveRecord::Schema.define(version: 20170228100721) do
     t.string   "dly_remarks"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "users_id"
     t.integer  "supply_info_id"
+    t.string   "dly_name"
+    t.integer  "user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170228100721) do
     t.datetime "updated_at",          null: false
     t.integer  "user_id"
     t.integer  "shs_dlyid"
+    t.integer  "users_id"
   end
 
   create_table "users", force: :cascade do |t|

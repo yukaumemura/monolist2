@@ -1,6 +1,10 @@
 class DeliveriesController < ApplicationController
   before_action :set_delivery, only: [:show, :edit, :update, :destroy]
 
+def supply_infos
+@delivery = Delivery.find(params[:id])
+@supply_infos = @delivery.supply_infos
+end
   # GET /deliveries
   # GET /deliveries.json
   def index
@@ -25,7 +29,7 @@ class DeliveriesController < ApplicationController
   # POST /deliveries
   # POST /deliveries.json
   def create
-    @delivery = Delivery.new(delivery_params)
+    @delivery = current_user.build_delivery(delivery_params)
 
     respond_to do |format|
       if @delivery.save
@@ -70,6 +74,6 @@ class DeliveriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def delivery_params
-      params.require(:delivery).permit(:dly_posnum, :dly_prefectures, :dly_municipality, :dly_streetnum, :dly_bill, :dly_contacts, :dly_remarks)
+      params.require(:delivery).permit(:dly_name,:dly_posnum, :dly_prefectures, :dly_municipality, :dly_streetnum, :dly_bill, :dly_contacts, :dly_remarks)
     end
 end

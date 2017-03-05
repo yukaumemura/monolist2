@@ -43,17 +43,28 @@
           <div class="panel-body">
               <table class="table table-bordered">
             <tr class="active">
-            　<th>不足品配信番号</th>
+            　<th>依頼配信番号</th>
             　<th>日時</th>
-            　<th>避難場所名</th>
+            　<th>依頼者名</th>
+            　<th>依頼地域</th>
             　<th>物資詳細</th>
             </tr>
             　<tr>
                 <td>0000001</td>
                 <td>2017/2/15(火）16：00</td>
-                 <td></td>
+                 <td>物資太郎</td>
+                 <td>東京都千代田区</td>
                 <td>支援物資詳細</td>
             </tr>
+            <tr><% @supplyinfos.each do |supply_info| %>
+                <td><%= supply_info.delivery.id  %></td>
+                <td><%= supply_info.created_at  %></td>
+                <td><%= supply_info.delivery.dly_name  %></td>
+                <td><%= supply_info.delivery.dly_prefectures  %></td>
+                <td><%= link_to '支援物資詳細', supply_infos_delivery_path(supply_info.delivery) %></td>
+                <% end %>
+            </tr>
+            <tr>
         　</table>
           </div>
         </div>

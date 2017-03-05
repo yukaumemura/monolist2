@@ -1,8 +1,8 @@
 class SupplyInfo < ActiveRecord::Base
 #物情配信登録(災害物資の仕分けで発生した不足余剰品が発生した場合に配信するページ）のバリデ
 #配信日時はdatatime型で必須
-
-has_many :deliveries
+belongs_to :user
+has_one :delivery , through: :user
 #物資名は文字型で必須項目
 validates :shs_name, presence: true   
     
