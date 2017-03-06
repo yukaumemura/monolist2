@@ -7,54 +7,52 @@
            <h3>お届け先情報</h3>
           現在のお届け先はこちらになってます。変更する場合は「変更リンク」からクリックしてください。
         　
-          <% @deliveries.each do |delivery| %>
 <table class="table table-bordered">
 	<tbody>
 		 <tr>
 			<th width="150" class="danger">お届け先ID</th>
-			<td><%= delivery.user_id %></td>
+			<td><%= @delivery.user_id %></td>
 		</tr>
 		<tr>
 	  <tr>
 			<th width="150" class="danger">依頼者名</th>
-			<td><%= delivery.dly_name %></td>
+			<td><%= @delivery.dly_name %></td>
 		</tr>
 		<tr>
 		    <tr>
 			<th class="danger">連絡先</th>
-			<td><%= delivery.dly_contacts %></td>
+			<td><%= @delivery.dly_contacts %></td>
 		</tr>
 			<th class="danger">郵便番号</th>
-			<td><%= delivery.dly_posnum %></td>
+			<td><%= @delivery.dly_posnum %></td>
 		</tr>
 		<tr>
 		<th class="danger">都道府県</th>
-		 <td><%= delivery.dly_prefectures %></td>
+		 <td><%= @delivery.dly_prefectures %></td>
 		</tr>
 		<tr>
 			<th class="danger">市区町村</th>
-			<td><%= delivery.dly_municipality %></td>
+			<td><%= @delivery.dly_municipality %></td>
 		</tr>
 		<tr>
 			<th class="danger">番地以下</th>
-			<td><%= delivery.dly_streetnum %></td>
+			<td><%= @delivery.dly_streetnum %></td>
 		</tr>
 		<tr>
 		<th class="danger">建物名</th>
-			<td><%= delivery.dly_bill %></td>
+			<td><%= @delivery.dly_bill %></td>
 		</tr>
 		<tr>
 		<th class="danger">コメント</th>
-			<td><%= delivery.dly_remarks %></td>
+			<td><%= @delivery.dly_remarks %></td>
 		</tr>
 		</tr>
 	</tbody>
 </table>
 
- <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜<%= link_to '詳細', delivery %>｜ <%= link_to '変更', edit_delivery_path(delivery) %>｜
- <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
+ <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜<%= link_to '詳細', @delivery %>｜ <%= link_to '変更', edit_delivery_path(@delivery) %>｜
+ <%= link_to '削除', @delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
 </div>
- <% end %>
 
          <table class="table table-bordered">
              <caption>不足余剰品リスト</caption>
@@ -93,10 +91,9 @@
         		<% end %>	
         	</tbody>
         </table> 
-        <%= form_for(@supplyinfo) do |f| %>
+        <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
         <div class="text-center">
         　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
-           <button type="button" class="btn btn-success">支援物資情報を配信する</button>
            <button type="button" class="btn btn-success">支援物資情報を配信停止</button>
   	    </div>
   	    <% end %>

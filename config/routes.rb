@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   get 'transport/index'
    resources :offers , only: [:new]
   get 'rails/generate'
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   #get 'supply_infos/edit'
 
  resources :supply_infos do
- #post 'info', :on => :collection
  post 'disasterinfo', :on => :collection
+ delete 'infostop' , :on => :collection
 end
  
   #get 'suppliesinfos/index'

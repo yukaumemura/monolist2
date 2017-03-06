@@ -1,0 +1,95 @@
+<div class="col-sm-12">  
+    <div class="panel panel-danger">
+      <div class="panel-heading">支援物資配達依頼表</div>
+      <div class="panel-body">
+      	現在閲覧してる支援物資情報の内容です。<br>
+      	配信者とご連絡を取りたい場合は「依頼者へお問い合わせ」でチャット機能から会話ができます。<br>
+      	お気に入り登録したい場合はお気に入り登録を押してください。
+           <% supply_info = @supplyinfos.where.not(shs_today: nil).first %>
+            <h3>配信日
+            <%= supply_info.shs_today %>
+            </h3>
+        　 <h3><配信者住所> </h3>
+          <table class="table table-bordered">
+        	<tbody>
+        		 <tr>
+        			<th width="150" class="danger">お届け先ID</th>
+        			<td><%= @delivery.user_id %></td>
+        		</tr>
+        		<tr>
+        			<th width="150" class="danger">依頼者名</th>
+        			<td><%= @delivery.dly_name %></td>
+        		</tr>
+        		<tr>
+        		    <tr>
+        			<th class="danger">連絡先</th>
+        			<td><%= @delivery.dly_contacts %></td>
+        		</tr>
+        			<th class="danger">郵便番号</th>
+        			<td><%= @delivery.dly_posnum %></td>
+        		</tr>
+        		<tr>
+        		<th class="danger">都道府県</th>
+        		 <td><%= @delivery.dly_prefectures %></td>
+        		</tr>
+        		<tr>
+        			<th class="danger">市区町村</th>
+        			<td><%= @delivery.dly_municipality %></td>
+        		</tr>
+        		<tr>
+        			<th class="danger">番地以下</th>
+        			<td><%= @delivery.dly_streetnum %></td>
+        		</tr>
+        		<tr>
+        		<th class="danger">建物名</th>
+        			<td><%= @delivery.dly_bill %></td>
+        		</tr>
+        		<tr>
+        		<th class="danger">コメント</th>
+        			<td><%= @delivery.dly_remarks %></td>
+        		</tr>
+        		</tr>
+        	</tbody>
+　　　　</table>
+
+         <table class="table table-bordered">
+             <caption>不足余剰品リスト</caption>
+        	<tbody>
+        		<tr class="active">
+        		    <th rowspan="2">配信物資番号</th>
+        			<th rowspan="2">物資名</th>
+        			<th colspan="2">希望物資</th>
+        			<th colspan="2">不足品</th>
+        			<th colspan="2">余剰品</th>
+        			<th rowspan="2">備考</th>
+        		</tr>
+        		<tr class="active">
+        			<th>種目</th>
+        			<th>サイズ</th>
+        			<th>段ボール</th>
+        			<th>単数</th>
+        			<th>段ボール</th>
+        			<th>単数</th>
+        		</tr>
+        		<tr>
+        		    <% @supplyinfos.each do |supply_info| %>
+        		   	<td><%= supply_info.id %></td>
+        			<td><%= supply_info.shs_name %></td>
+        			<td><%= supply_info.shs_sizeEvent %></td>
+        			<td><%= supply_info.shs_goodsSize %></td>
+        			<td><%= supply_info.shs_Lackofgdsdbox %></td>
+        			<td><%= supply_info.shs_Lackofgds %></td>
+        			<td><%= supply_info.shs_Surplusitemdbox %></td>
+        		　　<td><%= supply_info.shs_Surplusitem %></td>
+        			<td><%= supply_info.shs_note %></td>
+        		</tr>
+        			<% end %>
+        	</tbody>
+        </table>
+      </div>
+      <div class="panel-footer">
+      	<%= link_to "支援物資配信情報に戻る", supply_infos_info_path %>　/　<button type="button" class="btn btn-warning">配信者へお問い合わせ</button>
+      	<button type="button" class="btn btn-primary">お気に入り登録</button>
+      </div>
+    </div>
+</div>

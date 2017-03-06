@@ -3,7 +3,7 @@ class DeliveriesController < ApplicationController
 
 def supply_infos
 @delivery = Delivery.find(params[:id])
-@supply_infos = @delivery.supply_infos
+@supplyinfos = @delivery.supply_infos
 end
   # GET /deliveries
   # GET /deliveries.json

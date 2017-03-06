@@ -1,11 +1,12 @@
 class SupplyInfosController < ApplicationController
+ before_action :logged_in_user , except: [:info]
   before_action :set_supply_infos,only:[:edit,:update]
   
-  def index
-    @supplyinfos=SupplyInfo.all
-    @supplyinfo=SupplyInfo.new
-    @deliveries = Delivery.all
-  end
+ def index
+    @supplyinfos = current_user.supply_infos
+    @supplyinfo = SupplyInfo.new
+    @delivery = current_user.delivery
+end
   
   def create
     redirect_to login_path unless !!current_user
@@ -48,30 +49,35 @@ class SupplyInfosController < ApplicationController
   end
   
   def info
-     @supplyinfos = SupplyInfo.group(:user_id)
-     @supplyinfos=SupplyInfo.all
-    @deliveries = Delivery.all
+     @supplyinfos = SupplyInfo.where.not(shs_today: nil).group(:user_id)
+     
     #＠d = Delivery.all
   #  SupplyInfo.destroy_all(user_id: current_user.id)
    # redirect_to root_path , notice: '災害物資情報の配信を停止しました'
   end
+  
   #配信ページ用リンク
   def show
     @supplyinfos=SupplyInfo.all
     @deliveries = Delivery.all
-     @supplyinfos = SupplyInfo.all
-  end
-  def disasterinfo
-    SupplyInfo
-    Delivery
-   redirect_to root_path , notice: '災害物資情報の配信を新規配信しました'
   end
   
+   def infostop
+   
+  end
+  
+  def disasterinfo
+ #配信の処理を書く
+ current_user.supply_infos.update_all(shs_today: Time.zone.now)
+ redirect_to supply_infos_info_url , notice: '災害物資情報の配信を新規配信しました'
+end
+
+  private
   def set_supply_infos
     @supplyinfos=SupplyInfo.find(params[:id])
   end
   
-  private
+  
   def supply_infos_params
     params.require(:supply_info).permit(:shs_name, :shs_sizeEvent,:shs_goodsSize,
     :shs_Lackofgdsdbox,:shs_Lackofgds,:shs_Surplusitemdbox,:shs_Surplusitem,:shs_note)
