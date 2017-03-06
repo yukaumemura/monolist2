@@ -2,7 +2,6 @@
     <div class="panel panel-danger">
       <div class="panel-heading">支援物資配達依頼表</div>
       <div class="panel-body">
-           <h3>お届け依頼日</h3>
            
            <h3>お届け先情報</h3>
           現在のお届け先はこちらになってます。変更する場合は「変更リンク」からクリックしてください。
@@ -91,12 +90,15 @@
         		<% end %>	
         	</tbody>
         </table> 
-        <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
         <div class="text-center">
-        　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
-           <button type="button" class="btn btn-success">支援物資情報を配信停止</button>
-  	    </div>
-  	    <% end %>
+		  <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
+		　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
+		　<% end %>
+		　<%= form_for(@supplyinfo , url: infostop_supply_infos_path , method: :delete) do |f| %>
+		　　<%= f.submit "支援物資情報を配信停止", class: "btn btn-large btn-success" %>
+		　<% end %>
+		　
+		</div>
       </div>
     </div>
 </div>

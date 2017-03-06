@@ -62,9 +62,10 @@ end
     @deliveries = Delivery.all
   end
   
-   def infostop
-   
-  end
+  def infostop
+ current_user.supply_infos.update_all(shs_today: nil)
+ redirect_to supply_infos_info_url , notice: '災害物資情報の配信を停止しました'
+end
   
   def disasterinfo
  #配信の処理を書く
