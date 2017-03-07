@@ -1,16 +1,17 @@
-<div class="col-sm-10">
+<div class="row">
+<div class="col-sm-11"> 
 <div class="panel panel-default">
   <div class="panel-heading">物資在庫登録</div>
   <div class="panel-body">
   	現在仕分けされた物資の在庫状況を管理し、不足品、余剰品があれば、物情配信で拡散してください<br>
   	物資在庫検索からは特定の対象物資を検索確認できます。<br>
   	<a href="https://drive.google.com/open?id=0B78CozxbA3b9OUZvb0RWam1tNTg" target="_blank">在庫管理票の下書きはこちらからDLできます。</a><br>
-  	DLするにはグーグルのアカウント登録が必要です。<br>
+  	ダウンロードするにはグーグルのアカウント登録が必要です。<br>
   	筆記用具と巻き尺（段ボール梱包された物資の縦/横/幅の長さを図るために必要）と生きてるネット回線とパソコンかタブレットをご用意ください
   	</div>
 </div>
 </div>
-<div class="col-sm-4">  
+<div class="col-sm-4"> 
 <div class="panel panel-success">
   <div class="panel-heading">物資在庫登録フォーム</div>
     <div class="panel-body">
@@ -24,30 +25,30 @@
 				<%= f.text_field :gs_name, class: "form-control input-sm", placeholder: "コーラ" %></td>
 		</tr>
 		<tr>
-			<th rowspan="2" class="success">物資</th>
+			<th rowspan="2" class="success" width="5">物資</th>
 			<th class="success">種目</th>
 			<td><label>服などの場合に記入</label><br>
-				<%= f.select :gs_sizeEvent, {"なし" => "なし" , "大人" => "大人" ,"大人男" => "大人男" , "大人女" => "大人女"  , "子供" => "子供","子供女" => "子供女","子供男" => "子供男","赤ちゃん" => "赤ちゃん","赤ちゃん男" => "赤ちゃん男","赤ちゃん女" => "赤ちゃん女"} %></td>
+				<%= f.select :gs_sizeEvent, {"なし" => "なし" , "共通" => "共通" ,"大人" => "大人" ,"大人男" => "大人男" , "大人女" => "大人女"  , "子供" => "子供","子供女" => "子供女","子供男" => "子供男","赤ちゃん" => "赤ちゃん","赤ちゃん男" => "赤ちゃん男","赤ちゃん女" => "赤ちゃん女"} %></td>
 		</tr>
 		<tr>
 			<th class="success">サイズ</th>
 			<td><label>服などでサイズがある場合に記入</label><br>
-				<%= f.text_field :gs_goodsSize, class: "form-control input-sm", placeholder: "S" %></td>
+				<%= f.text_field :gs_goodsSize, class: "form-control input-sm", placeholder: "例：S" %></td>
 		</tr>
 		<tr>
 			<th rowspan="3" class="success">段ボール</th>
 			<th class="success">重量ｇ</th>
 			<td><label>段ボール１つあたりの重量</label><br>
-				<%= f.text_field :gs_dbweight, class: "form-control input-sm", placeholder: "10" %></td>
+				<%= f.text_field :gs_dbweight, class: "form-control input-sm", placeholder: "半角英数字" %></td>
 		</tr>
 		<tr>
 			<th class="success">１箱入数</th>
 			<td><label>1つの段ボールに入ってる支援物資の個数<br>（例）たばこ1ケース12個</label><br>
-				<%= f.text_field :gs_dbboxcount, class: "form-control input-sm", placeholder: "10" %></td>
+				<%= f.text_field :gs_dbboxcount, class: "form-control input-sm", placeholder: "半角英数字" %></td>
 		</tr>
 		<tr>
 			<th class="success">サイズcm</th>
-			<td><label>１つの段ボールあたり、縦/横/幅のサイズ</label><br>
+			<td><label>段ボール1箱あたりの縦/横/幅のサイズ</label><br>
 				<%= f.text_field :gs_dbboxsize, class: "form-control input-sm", placeholder: "10/20/30" %></td>
 		
 		</tr>
@@ -70,60 +71,54 @@
 		<tr>
 			<th class="success">不足数</th>
 			<td><label>今どれだけ不足しているか</label>
-				<%= f.text_field:gs_shortages, class: "form-control input-sm", placeholder: "30" %></td>
+				<%= f.text_field:gs_shortages, class: "form-control input-sm", placeholder: "半角英数字" %></td>
 		</tr>
 			<tr>
 			<th class="success">余剰数</th>
 			<td><label>今どれだけいらないか</label>
-				<%= f.text_field:gs_ExtraParts, class: "form-control input-sm", placeholder: "30" %></td>
+				<%= f.text_field:gs_ExtraParts, class: "form-control input-sm", placeholder: "半角英数字" %></td>
 		</tr>
 		<tr>
 			<th class="success" colspan="2">備考</th>
-			<td><%= text_area :goos_note, :comtent, :size => "35x5" %></td>
+			<td><%= f.text_area :goos_note,  :size => "35x5", placeholder: "何か追記事項があれば記入して下さい" %></td>
 		</tr>
 	</tbody>
 </table>
- 
      </div>
-          <div class="panel-footer">
-              <div class="text-center">
-                 <%= f.submit "物資新規登録 ", class: "btn btn-large btn-primary" %>
-            </div>
+          <div class="text-center"><%= f.submit "物資新規登録 ", class: "btn btn-large btn-primary" %></div>
             <% end %>
-          </div>
-         </div>
- </div>
+      </div>
+</div>
 
-<div class="col-sm-7">
-<div class="panel panel-default">
+<div class="col-sm-6">
+<div class="panel panel-primary">
   <div class="panel-heading">物資在検索フォーム</div><th class="active">
   <div class="panel-body">
-  	物資在庫表に登録されている物資を検索できます
+物資在庫表に登録されている物資を検索できます
   	 <%= search_form_for @q, url: {controller: :reliefs, action: :index} do |f| %>
   　　　　 <table class="table table-bordered" >
   　　　　 	<tbody>
   　　　　 	<tr>
-				<th class="active"><%= f.label :gs_name, "商品名" %></th>
-				<td><%= f.search_field :gs_name_cont %></td>
+				<th class="active" width="90"><%= f.label :gs_name, "商品名"  %></th>
+				<td><%= f.search_field :gs_name_cont , placeholder: "例：ワンピース"%></td>
+				<th class="active">物資サイズ</th>
+				<td><%= f.search_field :gs_goodsSize_cont, placeholder: "例：M"%></td>
 			</tr>
 		　<tr>
-				<th class="active"><%= f.label :gs_name, "物資サイズ" %></th>
-				<td><%= f.search_field :gs_goodsSize_cont %></td>
-			</tr>
-			<th class="active">在庫数</th>
-			<td><%= f.search_field :gs_NowNum_lt %>　~　<%= f.search_field :gs_NowNum_gt %></td>
+			<th class="active" >在庫数</th>
+			<td colspan="3"><%= f.search_field :gs_NowNum_lt , placeholder: "最小値（半角数字）"%>　~　<%= f.search_field :gs_NowNum_gt, placeholder: "最大値（半角数字）" %></td>
 		</tr>
 		<tr>
 			<th class="active">不足数</th>
-			<td><%= f.search_field :gs_shortages_lt %>　~　<%= f.search_field :gs_shortages_gt %></td>
+			<td colspan="3"><%= f.search_field :gs_shortages_lt , placeholder: "最小値（半角数字）"%>　~　<%= f.search_field :gs_shortages_gt , placeholder: "最大値（半角数字）"%></td>
 		</tr>
 		<tr>
 			<th class="active">不要数</th>
-			<td><%= f.search_field :goos_note_lt %>　~　<%= f.search_field :goos_note_gt %></td>
+			<td colspan="3"><%= f.search_field :goos_note_lt , placeholder: "最小値（半角数字）"%>　~　<%= f.search_field :goos_note_gt, placeholder: "最大値（半角数字）" %></td>
 				</tr>
 				<tr>
 				<th rowspan="2" class="active">賞味期限</th>
-				<td><%= f.datetime_select :gs_BestbeforEnd_lt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforeStart_gt, "以上" %><br>
+				<td colspan="3"><%= f.datetime_select :gs_BestbeforEnd_lt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforeStart_gt, "以上" %><br>
 				<%= f.datetime_select :gs_BestbeforeStart_gt, :use_month_numbers => true,　include_blank: true, include_blank: true, default: nil %><%= f.label :gs_BestbeforEnd_lt, "以下" %></td>
 				</tr>
 				<tr>
@@ -135,14 +130,14 @@
   </div>
 </div>
 </div>
-<div class="col-sm-7">  
+<div class="col-sm-8">  
   <div class="panel panel-warning">
     <div class="panel-heading">物資在庫表</div>
 　　　物資在庫登録フォームから登録された内容が表示されてます。
 	   <table class="table table-bordered" >
 		<tbody>
 			<tr class="warning">
-				<th rowspan="2">物資№</th>
+				<th rowspan="2">物資番号</th>
 				<th rowspan="2">品名</th>
 				<th colspan="2">物資</th>
 			   <th colspan="3">物資詳細</th>
@@ -164,7 +159,7 @@
 				<td><%= relief.gs_NowNum %></td>
 				<td style="color:red;"><%= relief.gs_shortages %></td>
 				<td style="color:blue;"><%= relief.gs_ExtraParts %></td>
-				<td><%= link_to "詳細" ,edit_relief_path(relief) %><br>
+				<td width="60"><%= link_to "詳細" ,edit_relief_path(relief) %><br>
 	        <%= link_to "削除" , relief , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
 	        </td>
 			</tr>
@@ -172,5 +167,6 @@
 		</tbody>
 	</table>
  </div>
+</div>
 </div>
 　

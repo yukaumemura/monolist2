@@ -2,7 +2,6 @@
   <% if @delivery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@delivery.errors.count, "error") %> prohibited this delivery from being saved:</h2>
-
       <ul>
       <% @delivery.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,7 +11,6 @@
   <% end %>
 
   <div class="field">
-
  <table class="table table-bordered">
 	<tbody>
 	  <tr>
@@ -20,6 +18,9 @@
 				<td><%= f.text_field :dly_name , class: "form-control", placeholder: "000-000" %></td>
 		</tr>
 		<tr>
+			<th>連絡先</th>
+				<td><%= f.text_field :dly_contacts, class: "form-control", placeholder: "自分の好きな連絡先" %></td>
+		</tr>
 			<th width="80">郵便番号</th>
 			<td><%= f.text_field :dly_posnum , class: "form-control", placeholder: "000-000" %></td>
 		</tr>
@@ -40,19 +41,13 @@
 			<td><%= f.text_field :dly_bill, class: "form-control", placeholder: "リリーフサポートビル2階" %></td>
 		</tr>
 		<tr>
-			<th>連絡先</th>
-				<td><%= f.text_field :dly_contacts, class: "form-control", placeholder: "自分の好きな連絡先" %></td>
-		</tr>
-		<tr>
 			<th>備考</th>
-			<td><%= f.text_area :dly_remarks , class: "form-control" , placeholder: "何か特記事項があれば記入" , :size => "300x5" %></td>
+			<td><%= f.text_area :dly_remarks , class: "form-control" , placeholder: "何か特記事項があれば記入" , :size => "100x5" %></td>
 		</tr>
 	</tbody>
 </table>
+<br>
   <div class="actions">
     <%= f.submit "お届け先個人情報登録", class: "btn btn-large btn-primary" %>
   </div>
-
-  
-  
 <% end %>

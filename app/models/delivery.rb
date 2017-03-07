@@ -17,7 +17,7 @@ validates :dly_municipality, presence: true
 validates :dly_streetnum, presence: true
 
 #お届け先建物名
-validates :dly_bill, presence: true
+validates :dly_bill, length: { minimum: 2, maximum: 2000 }, allow_blank: true
 
 #お届け先の連絡先
 validates :dly_contacts, presence: true

@@ -1,10 +1,10 @@
 <div class="col-sm-5"> 
-<div class="panel panel-default">
+<div class="panel panel-danger">
   <div class="panel-heading">お届け先変更</div>
-  <div class="panel-body">入力ご確認の上でご登録ください</div>
+  <div class="panel-body">入力内容で変更があれば、ご修正とご確認の上でご登録ください</div>
   <table class="table">
       <%= render 'form' %>
   </table>
 </div>
-<div class="panel-footer"><%= link_to '詳細', @delivery %> |<%= link_to '戻る', deliveries_path %></div>
+<div class="panel-footer"><%= link_to '詳細', @delivery %> |<%= link_to 'お届け先結果へ戻る', deliveries_path %></div>
 </div>

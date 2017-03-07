@@ -1,48 +1,52 @@
 <p id="notice"><%= notice %></p>
-<div class="col-sm-5"> 
-<div class="panel panel-default">
-  <div class="panel-heading">お届け先情報確認</div>
-  <div class="panel-body">更新ページなどで設定した内容をご確認いただけます。</div>
-<table class="table table-bordered">
-	<tbody>
-		<tr>
-			<th>依頼者名</th>
-			<td><%= @delivery.dly_name %></td>
-		</tr>
-	  <tr>
-			<th>依頼者名</th>
-			<td><%= @delivery.dly_name %></td>
-		</tr>
-		<tr>
-			<th width="80">郵便番号</th>
-			<td> <%= @delivery.dly_posnum %></td>
-		</tr>
-		<tr>
-			<th>都道府県</th>
-			<td><%= @delivery.dly_prefectures %></td>
-		</tr>
-		<tr>
-			<th>市区町村</th>
-				<td><%= @delivery.dly_municipality %></td>
-		</tr>
-		<tr>
-			<th>番地以下</th>
-				<td><%= @delivery.dly_streetnum %></td>
-		</tr>
-		<tr>
-			<th>建物名</th>
-			<td><%= @delivery.dly_bill %></td>
-		</tr>
-		<tr>
-			<th>連絡先</th>
-				<td><%= @delivery.dly_contacts %></td>
-		</tr>
-		<tr>
-			<th>備考</th>
-			<td><%= @delivery.dly_remarks %></td>
-		</tr>
-	</tbody>
-</table>
-<div class="panel-footer"><%= link_to '更新', edit_delivery_path(@delivery) %> |　<%= link_to '戻る', deliveries_path %></div>
-</div>
+<div class="col-sm-6"> 
+	<div class="panel panel-info">
+	  <div class="panel-heading">お届け先情報確認</div>
+	  <div class="panel-body">更新ページなどで設定した内容をご確認いただけます。</div>
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<th width="100" class="info">会員ID</th>
+					<td><%= @delivery.user_id %></td>
+				</tr>
+				<tr>
+					<th class="info">お届け先ID</th>
+					<td><%= @delivery.id %></td>
+				</tr>
+			  <tr>
+					<th class="info">依頼者名</th>
+					<td><%= @delivery.dly_name %></td>
+				</tr>
+				<tr>
+					<th class="info">郵便番号</th>
+					<td> <%= @delivery.dly_posnum %></td>
+				</tr>
+				<tr>
+					<th class="info">都道府県</th>
+					<td><%= @delivery.dly_prefectures %></td>
+				</tr>
+				<tr>
+					<th class="info">市区町村</th>
+						<td><%= @delivery.dly_municipality %></td>
+				</tr>
+				<tr>
+					<th class="info">番地以下</th>
+						<td><%= @delivery.dly_streetnum %></td>
+				</tr>
+				<tr>
+					<th class="info">建物名</th>
+					<td><%= @delivery.dly_bill %></td>
+				</tr>
+				<tr>
+					<th class="info">連絡先</th>
+					<td><%= @delivery.dly_contacts %></td>
+				</tr>
+				<tr>
+					<th class="info">備考</th>
+					<td><%= @delivery.dly_remarks %></td>
+				</tr>
+			</tbody>
+		</table>
+	<div class="panel-footer"><%= link_to '更新', edit_delivery_path(@delivery) %> |　<%= link_to '戻る', deliveries_path %></div>
+	</div>
 </div>

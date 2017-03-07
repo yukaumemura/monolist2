@@ -1,4 +1,4 @@
-<div class="col-sm-10">  
+<div class="col-sm-8">  
     <div class="panel panel-danger">
       <div class="panel-heading">支援物資配達依頼表</div>
       <div class="panel-body">
@@ -9,54 +9,44 @@
 <table class="table table-bordered">
 	<tbody>
 		 <tr>
-			<th width="150" class="danger">お届け先ID</th>
+			<th class="danger"  width="100">お届け先ID</th>
 			<td><%= @delivery.user_id %></td>
-		</tr>
-		<tr>
-	  <tr>
-			<th width="150" class="danger">依頼者名</th>
+			<th class="danger" width="80">依頼者名</th>
 			<td><%= @delivery.dly_name %></td>
-		</tr>
-		<tr>
-		    <tr>
-			<th class="danger">連絡先</th>
+			<th class="danger" width="80">連絡先</th>
 			<td><%= @delivery.dly_contacts %></td>
 		</tr>
-			<th class="danger">郵便番号</th>
+		    <tr>
+		<th class="danger"  width="100">郵便番号</th>
 			<td><%= @delivery.dly_posnum %></td>
-		</tr>
-		<tr>
 		<th class="danger">都道府県</th>
 		 <td><%= @delivery.dly_prefectures %></td>
-		</tr>
-		<tr>
-			<th class="danger">市区町村</th>
+		 <th class="danger" width="80">市区町村</th>
 			<td><%= @delivery.dly_municipality %></td>
 		</tr>
 		<tr>
 			<th class="danger">番地以下</th>
-			<td><%= @delivery.dly_streetnum %></td>
+			<td colspan="5"><%= @delivery.dly_streetnum %></td>
 		</tr>
 		<tr>
 		<th class="danger">建物名</th>
-			<td><%= @delivery.dly_bill %></td>
+			<td colspan="5"><%= @delivery.dly_bill %></td>
 		</tr>
 		<tr>
 		<th class="danger">コメント</th>
-			<td><%= @delivery.dly_remarks %></td>
+			<td colspan="5"><%= @delivery.dly_remarks %></td>
 		</tr>
 		</tr>
 	</tbody>
 </table>
 
- <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜<%= link_to '詳細', @delivery %>｜ <%= link_to '変更', edit_delivery_path(@delivery) %>｜
+ <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜ <%= link_to '変更', edit_delivery_path(@delivery) %>｜
  <%= link_to '削除', @delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
 </div>
-
+       <h3>不足余剰品リスト</h3>
          <table class="table table-bordered">
-             <caption>不足余剰品リスト</caption>
         	<tbody>
-        		<tr class="active">
+        		<tr class="danger">
         		    <th rowspan="2">配信物資番号</th>
         			<th rowspan="2">物資名</th>
         			<th colspan="2">希望物資</th>
@@ -65,7 +55,7 @@
         			<th rowspan="2">備考</th>
         			<th rowspan="2">手続</th>
         		</tr>
-        		<tr class="active">
+        		<tr class="danger">
         			<th>種目</th>
         			<th>サイズ</th>
         			<th>段ボール</th>
@@ -90,15 +80,15 @@
         		<% end %>	
         	</tbody>
         </table> 
-        <div class="text-center">
-		  <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
+      <div class="col-sm-3 col-xs-6">
+      <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
 		　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
 		　<% end %>
+		　</div>
+		　<div class="col-sm-3 col-xs-6">
 		　<%= form_for(@supplyinfo , url: infostop_supply_infos_path , method: :delete) do |f| %>
 		　　<%= f.submit "支援物資情報を配信停止", class: "btn btn-large btn-success" %>
 		　<% end %>
-		　
-		</div>
-      </div>
+		　</div>
     </div>
 </div>

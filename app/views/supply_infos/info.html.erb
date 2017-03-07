@@ -8,14 +8,16 @@
           <br>
               <table class="table table-bordered">
             <tr class="active">
-            　<th>依頼配信番号</th>
-            　<th>日時</th>
-            　<th>依頼者名</th>
-            　<th>依頼先都道府県</th>
-            　<th>依頼先市区町村</th>
-            　<th>物資詳細</th>
-            </tr>
-            <tr>
+              	<th rowspan="2">配信番号</th>
+                	<th rowspan="2">配信日時</th>
+            			<th rowspan="2">依頼者名</th>
+            			<th colspan="2">依頼先</th>
+            			<th rowspan="2">物資詳細</th>
+	　　　　　	</tr>
+        		<tr class="active">
+        			<th>都道府県</th>
+        			<th>市区町村</th>
+        		</tr>
               <% @supplyinfos.each do |supply_info| %>
                 <% if supply_info.delivery.present? %>
                 <td><%= supply_info.delivery.id  %></td>

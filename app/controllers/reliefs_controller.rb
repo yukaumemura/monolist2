@@ -1,9 +1,9 @@
 class ReliefsController < ApplicationController
-  
-  # has_many :products
-  # a belongs_to :relief
+
   def index
+     #新規登録
     @relief = Relief.new
+    #在庫管理表の検索
     @q        = Relief.search(params[:q])
     @reliefs = @q.result(distinct: true)
   end
@@ -13,22 +13,23 @@ class ReliefsController < ApplicationController
   end
   
   def serch
+#在庫管理表の検索
   @reliefs = Relief.all
   end
-
+  #在庫管理表への編集
   def create
    @relief =Relief.new(relief_params)
     if @relief.save
-      redirect_to root_path , notice: '保存しました'
+      redirect_to root_path , notice: '物資在庫表に新規保存しました'
     else
-        # メッセージが保存できなかった時
+        # 物資在庫表に保存できなかった時
         @reliefs =Relief.all
         @relief = Relief.new
-        flash.now[:alert] = "保存失敗しました。"
+        flash.now[:alert] = "物資在庫表に保存失敗しました。"
         render 'index'
       end
   end
-  
+  #在庫管理表の編集
  def edit
    @relief = Relief.find(params[:id])
   end 
@@ -37,18 +38,18 @@ class ReliefsController < ApplicationController
 
     @relief = Relief.find(params[:id])
    if @relief.update(relief_params)
-     # 保存に成功した場合はトップページへリダイレクト
-     redirect_to root_path , notice: '編集しました'
+     # '物資在庫表の対象物を保存に成功した場合はトップページへリダイレクト
+     redirect_to root_path , notice: '物資在庫表の対象物を編集しました'
    else
-     # 保存に失敗した場合は編集画面へ戻す
+     # '物資在庫表の対象物を保存に失敗した場合は編集画面へ戻す
      render 'edit'
    end
  end
-  
+   # '物資在庫表の対象物を削除
   def destroy
     @relief = Relief.find(params[:id])
     @relief.destroy
-    redirect_to root_path, notice: '削除しました'
+    redirect_to root_path, notice: '物資在庫表の対象物を削除しました'
   end
   
    def set_reliefs

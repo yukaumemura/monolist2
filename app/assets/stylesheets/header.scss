@@ -94,3 +94,9 @@ text-shadow:1px 1px 3px #ccc,
     margin-top: 10px;
   }
 }
+@media screen and (max-width: 768px) {
+/* 768pxまでの幅の場合に適応される */
+     body {
+        background-color:#f10010;
+    }
+}

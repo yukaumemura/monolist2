@@ -1,20 +1,13 @@
-
-
-	<div class="col-sm-12">
-		<div class="panel panel-info">
-		  <div class="panel-heading">お届け先情報</div>
-			  <div class="panel-body">
-			    現在、あなたが設定している支援物資の届け先です。<br>
-			    コメント欄にボランティア募集やあなたがいる場所の注意喚起などをする良いです。
-			  <%= render 'deliveries/form' %>
-			   </div>
-		  </div>
-	</div>
-
-	<div class="panel panel-info">
-	　<div class="panel-heading">お届け先情報の登録結果</div>
-			<div class="panel-body">
-			<% @deliveries.each do |delivery| %>
+<div class="col-sm-12">
+<div class="panel panel-info">
+  <div class="panel-heading">お届け先情報</div>
+  <div class="panel-body">
+  	現在、あなたが設定している支援物資の届け先です。<br>
+	コメント欄にボランティア募集やあなたがいる場所の注意喚起などをする良いです。<br>
+	お届け先を新規設定されたい方は新規お届け設定から設定してください。
+	<h3>お届け先情報の登録結果</h3>
+			</div>
+  	<% @deliveries.each do |delivery| %>
 			<table class="table table-bordered">
 				<tbody>
 					</tr>
@@ -30,7 +23,7 @@
 						<th>番地以下</th>
 						<th>連絡先</th>
 						<th>備考</th>
-						<th width="50">手続き</th>
+						<th>手続き</th>
 					</tr>
 					<tr>
 						<td></td>
@@ -44,14 +37,12 @@
 						<td><%= delivery.dly_bill %></td>
 						<td><%= delivery.dly_contacts %></td>
 						<td><%= delivery.dly_remarks %></td>
-						<td> <%= link_to '変更', edit_delivery_path(delivery) %><%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></td>
+						<td> <%= link_to '変更', edit_delivery_path(delivery) %> | <%= link_to '削除', delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></td>
 					</tr>
 					<tr>
 						<% end %>
 				</tbody>
 			</table>
-		　<% @deliveries.each do |delivery| %>
-		 <div class="panel-footer"><%= link_to '新規お届け先設定', new_delivery_path %></div>
-		 <% end %>
-		 </div>
-　　</div>
+			<br>
+  <div class="panel-footer panel-info"><%= link_to '新規お届け先設定', new_delivery_path %></div>
+</div>

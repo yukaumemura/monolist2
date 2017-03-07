@@ -8,14 +8,8 @@
 	<tbody>
 		<tr>
 			<th colspan="2" width="5" class="success">物資番号</th>
-			<td><label>全画面で登録した順に表示されてます。</label><br>
+			<td><label>在庫管理のメインページで登録した順に表示されてます。</label><br>
 				<%= f.text_field :id, class: "form-control input-sm", placeholder: "1" %></td>
-		</tr>
-		<tr>
-			<th colspan="2" width="5" class="success">物資写真</th>
-			<td><label>該当物資の写真を追加したい場合に使用</label><br>
-			<img src="rainbow.jpg" alt="写真" title="レインボーブリッジの写真">
-				<button type="button" class="btn btn-success">新規写真登録 </button></td>
 		</tr>
 		<tr>
 			<th colspan="2" width="5" class="success">物資名</th>
@@ -77,8 +71,8 @@
 				<%= f.text_field:gs_ExtraParts, class: "form-control input-sm", placeholder: "30" %></td>
 		</tr>
 		<tr>
-			<th class="success">備考</th>
-			<td colspan="2"><%= text_area :goos_note, :comtent, :size => "50x5" %></td>
+			<th class="success" colspan="2">備考</th>
+			<td><%= text_area :goos_note, :comtent, :size => "50x5" %></td>
 		</tr>
 	</tbody>
 </table>
