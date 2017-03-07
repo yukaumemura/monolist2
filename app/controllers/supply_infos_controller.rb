@@ -33,7 +33,7 @@ end
     @supply_infos=SupplyInfo.find(params[:id])
    if @supply_infos.update(supply_infos_params)
      # 保存に成功した場合はトップページへリダイレクト
-     redirect_to root_path , notice: '災害物資の編集しました'
+     redirect_to root_path , notice: '災害物資のの対象物を編集しました'
    else
      @supplyinfos = SupplyInfo.all  
      # 保存に失敗した場合は編集画面へ戻す
@@ -45,15 +45,11 @@ end
   def destroy
    @supplyinfo=SupplyInfo.find(params[:id])
     @supplyinfo.destroy
-    redirect_to root_path, notice: '削除しました'
+    redirect_to root_path, notice: '災害物資の対象物を削除しました'
   end
   
   def info
      @supplyinfos = SupplyInfo.where.not(shs_today: nil).group(:user_id)
-     
-    #＠d = Delivery.all
-  #  SupplyInfo.destroy_all(user_id: current_user.id)
-   # redirect_to root_path , notice: '災害物資情報の配信を停止しました'
   end
   
   #配信ページ用リンク

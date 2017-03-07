@@ -1,4 +1,4 @@
-<div class="col-sm-8">  
+<div class="col-sm-10">  
     <div class="panel panel-danger">
       <div class="panel-heading">支援物資配達依頼表</div>
       <div class="panel-body">
@@ -84,7 +84,7 @@
         			<td><%= supply_info.shs_Surplusitemdbox %></td>
         		　　<td><%= supply_info.shs_Surplusitem %></td>
         			<td><%= supply_info.shs_note %></td>
-        		　　<td><%= link_to "更新" , edit_supply_info_path(supply_info) %><br>
+        		　　<td width="50"><%= link_to "更新" , edit_supply_info_path(supply_info) %><br>
                          <%= link_to "削除" ,supply_info, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
         		</tr>
         		<% end %>	

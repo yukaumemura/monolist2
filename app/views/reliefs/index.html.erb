@@ -1,12 +1,14 @@
-
+<div class="col-sm-10">
 <div class="panel panel-default">
   <div class="panel-heading">物資在庫登録</div>
   <div class="panel-body">
   	現在仕分けされた物資の在庫状況を管理し、不足品、余剰品があれば、物情配信で拡散してください<br>
   	物資在庫検索からは特定の対象物資を検索確認できます。<br>
   	<a href="https://drive.google.com/open?id=0B78CozxbA3b9OUZvb0RWam1tNTg" target="_blank">在庫管理票の下書きはこちらからDLできます。</a><br>
-  	DLするにはグーグルのアカウント登録が必要です。
+  	DLするにはグーグルのアカウント登録が必要です。<br>
+  	筆記用具と巻き尺（段ボール梱包された物資の縦/横/幅の長さを図るために必要）と生きてるネット回線とパソコンかタブレットをご用意ください
   	</div>
+</div>
 </div>
 <div class="col-sm-4">  
 <div class="panel panel-success">
@@ -16,11 +18,6 @@
           <%= render 'shared/error_messages', object: f.object %>
           <table class="table table-bordered" >
 	<tbody>
-		<tr>
-			<th colspan="2" width="5" class="success">物資写真</th>
-			<td><label>該当物資の写真を追加したい場合に使用</label><br>
-				<button type="button" class="btn btn-success">新規写真登録 </button></td>
-		</tr>
 		<tr>
 			<th colspan="2" width="5" class="success">物資名</th>
 			<td><label>（必須）登録したい物資の名前</label><br>
