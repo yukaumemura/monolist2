@@ -1,35 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BootstrapのCSS読み込み -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery読み込み -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <header>
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu">
-              <span class="sr-only">Toggle navigation</span>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-inner">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-            <h1 class="logo"><%= link_to "relief goods", root_path %></h1>
-          </div>
-          <div class="collapse navbar-collapse" id="site-menu">
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "ガイドライン", guidelines_news_path %></li>
+           <h1 class="logo"><%= link_to "relief goods", root_path %></h1>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "ガイドライン", guidelines_news_path %></li>
             　<li><%= link_to "支援物資配信情報", supply_infos_info_path %></li>
-            　    <% unless logged_in? %>
+            <% unless logged_in? %>
               <li><%= link_to "新規登録", signup_path %></li>
               <li><%= link_to "ログイン", login_path %></li>
             <% else %>
- 
               <li>
                 <%= link_to new_item_path do %>
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                  物資ネット検索
+                 物資ネット検索
                 <% end %>
               </li>
-            　<li><%= link_to "プロフ設定", edit_user_path(current_user) %></li>
              <li><%= link_to "物情配信登録", supply_infos_path %></li>
               <li><%= link_to "物資在庫登録", reliefs_index_path %></li>
-              <li><%= link_to "避難者情報", relief_list_path %></li>
-              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                   <span class="gravatar">
@@ -38,20 +48,18 @@
                   <%= current_user.name %>
                   <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu">
                   <li><%= link_to "アカウント" , current_user  %></li>
                   <li><%= link_to "プロフ設定", edit_user_path(current_user) %></li>
                  <li><%= link_to "お届け先設定", deliveries_path  %></li>
                   <li role="separator" class="divider"></li>
-                  <li>
-                    <%= link_to "ログアウト", logout_path, method: "delete" %>
-                  </li>
+                  <li><%= link_to "ログアウト", logout_path, method: "delete" %></li>
                 </ul>
               </li>
-            </ul>
-            
-              <% end %>
-          </div>
+            <% end %>
+          </ul>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
+  </nav>
+</header>

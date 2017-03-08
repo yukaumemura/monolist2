@@ -70,46 +70,8 @@ width: 100%;
 background: url(sidebar_180.gif) repeat-y right; /* 右サイドバーの背景画像 */
 }
 
-/* --- ナビゲーション --- */
-/* --- ナビゲーションバー --- */
-div.nav {
-// width: 250px; /* ナビゲーションの幅 */
-font-size: 80%;
-margin: 2px;
-padding: 5px;
-}
 
-/* --- メニューエリア --- */
-div.nav ul.nl {
-margin: 0;
-padding: 0;
-border: 1px #666666 solid; /* メニューエリアの境界線 */
-list-style-type: none;
-text-align: left;
-}
-
-/* --- メニュー項目 --- */
-div.nav ul.nl li {
-border-top: 1px #808080 solid; /* 項目の上境界線 */
-border-bottom: 1px #404040 solid; /* 項目の下境界線 */
-}
-
-/* --- リンク --- */
-div.nav ul.nl li a {
-display: block;
-position: relative; /* IE6用 */
-padding: 12px 10px; /* リンクエリアのパディング（上下、左右） */
-background: #3f3f3f image-url("ver_menu4_off.gif") repeat-x top; /* リンクエリアの背景 */
-color: #e0e0e0; /* 文字色 */
-text-decoration: none; /* テキストの下線（なし） */
-}
-/* --- ポイント時の設定 --- */
-div.nav ul.nl li a:hover {
-background: #505050 url(ver_menu4_on.gif) repeat-x top; /* ポイント時の背景 */
-text-decoration: underline; /* テキストの下線（あり） */
-}
-
-
+  
 /* --- メインカラム --- */
 #content {
 float: left;
