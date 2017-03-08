@@ -1,24 +1,25 @@
 
-    <div class="example">
+    <div class="col-sm-8">
      <div class="panel panel-primary">  
-      <div class="panel-heading">現在在庫所持数の上位10個</div>
+      <div class="panel-heading">楽天アイテム所持在庫数の上位10個</div>
       <table class="table table-striped table-bordered">
-          <caption>当サイトで登録している被災者が現在所持している物資の多い順に表示してます。</caption>
+          <caption>当サイト登録中の会員様で現在所持の多い物資順に表示してます。</caption>
          <tbody>
     		<tr class="danger">
-    			<th>順位</th>
-    			<th>個数</th>
+    			<th width="80">順位</th>
+    			<th width="200">個数</th>
     			<th>商品名</th>
     			<th>備考</th>
     		</tr>
     		<tr><% @items.each.with_index(1) do |item,i| %>
     			<th><%= "#{i}" %></th>
-    			<th></th>
-    			<td><%= image_tag(item.large_image , alt: item.title) %></td>
+    			<th><%= item.have_users.count %></th>
+    			<td><%= image_tag(item.large_image , alt: item.title)%></td>
     			<td><%= item.title %></td>
     		</tr>
     		<% end %>
     	</tbody>
       </table>
       </div>
-　</div>
+      </div>
+

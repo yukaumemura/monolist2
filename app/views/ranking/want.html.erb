@@ -1,7 +1,7 @@
-
+ <div class="col-sm-7">
      <div class="panel panel-primary">  
-      <div class="panel-heading">現在不足物資品の上位10個</div>
-      <caption>当サイトで登録している被災者が現在欲しいとされる物資の多い順に表示してます。</caption>
+      <div class="panel-heading">楽天アイテム不足数</div>
+      <caption>当サイトに登録中の会員が現在欲しいとされる物資の多い順に表示してます。</caption>
       <table class="table table-striped table-bordered">
          <tbody>
     		<tr class="danger">
@@ -12,7 +12,7 @@
     		</tr>
     		<tr><% @items.each.with_index(1) do |item,i| %>
     			<th><%= "#{i}" %></th>
-    			<th></th>
+    			<th><%= item.want_users.count %></th>
     			<td><%= image_tag(item.large_image , alt: item.title) %></td>
     			<td><%= item.title %></td>
     		</tr>
@@ -20,4 +20,5 @@
     	</tbody>
       </table>
       </div>
+    </div>
 
