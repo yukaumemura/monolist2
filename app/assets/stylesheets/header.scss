@@ -2,27 +2,32 @@ header {
   padding:10px;
 font-family: 'Vidaloka', serif;
 text-align:center;
+
 font-weight:normal;
 color:#fff;
-font-size: 80%;
+font-size: 100%;
   height: 60px;
   .navbar {
     width: 100%;
     margin: 10px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     color:black;
+    vertical-align: middle;
     &.navbar-default {
       background-color: #fff !important;
     }
     .navbar-inner {
       max-width: 1200px;
       margin: 0 auto;
+      vertical-align: middle;
       .navbar-header {
         h1 {
           color:white;
           margin-light:400px;
           padding: 10px 0 0 0 !important;
+          vertical-align: middle;
           a {
+            vertical-align: middle;
             width: 200px;
             height: 40px !important;
             margin: 0;

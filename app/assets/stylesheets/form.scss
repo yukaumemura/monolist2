@@ -30,6 +30,21 @@
   .alert {
     width: 600px;
     margin: 0 auto;
-    text-align: center;
+    textt-align: center;
   }
+}
+.tables table {
+border: 1px #000000 solid;
+border-collapse: collapse;
+}
+
+.tables td {
+border: 1px #000000 solid;
+vertical-align: middle;
+}
+
+.tables th {
+border: 1px #000000 solid;
+text-align: center;
+vertical-align: middle;
 }

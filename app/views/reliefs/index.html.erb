@@ -1,3 +1,4 @@
+<div class="tables">
 <div class="row">
 <div class="col-sm-11"> 
 <div class="panel panel-default">
@@ -96,7 +97,7 @@
   <div class="panel-body">
 物資在庫表に登録されている物資を検索できます
   	 <%= search_form_for @q, url: {controller: :reliefs, action: :index} do |f| %>
-  　　　　 <table class="table table-bordered" >
+  　　　　 <table class="table table-borderee" >
   　　　　 	<tbody>
   　　　　 	<tr>
 				<th class="active" width="90"><%= f.label :gs_name, "商品名"  %></th>
@@ -130,7 +131,7 @@
   </div>
 </div>
 </div>
-<div class="col-sm-8">  
+<div class="col-sm-7">  
   <div class="panel panel-warning">
     <div class="panel-heading">物資在庫表</div>
 　　　物資在庫登録フォームから登録された内容が表示されてます。
@@ -141,7 +142,7 @@
 				<th rowspan="2">品名</th>
 				<th colspan="2">物資</th>
 			   <th colspan="3">物資詳細</th>
-			   <th rowspan="2">手続き</th>
+			   <th rowspan="2">手続</th>
 			</tr>
 			<tr class="warning">
 				<th>種目</th>
@@ -169,4 +170,6 @@
  </div>
 </div>
 </div>
+</div>
+
 　

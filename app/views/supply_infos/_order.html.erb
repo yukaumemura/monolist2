@@ -4,29 +4,37 @@
       <div class="panel-body">
            
            <h3>お届け先情報</h3>
-          現在のお届け先はこちらになってます。変更する場合は「変更リンク」からクリックしてください。
-        　
+          現在のお届け先はこちらになってます。変更する場合は「変更」からクリックして下さい。
+<div class="tables">        　
 <table class="table table-bordered">
 	<tbody>
 		 <tr>
 			<th class="danger"  width="100">お届け先ID</th>
 			<td><%= @delivery.user_id %></td>
-			<th class="danger" width="80">依頼者名</th>
-			<td><%= @delivery.dly_name %></td>
+			</tr>
+		    <tr>
 			<th class="danger" width="80">連絡先</th>
 			<td><%= @delivery.dly_contacts %></td>
+			</tr>
+		    <tr>
+			<th class="danger" width="80">依頼者名</th>
+			<td><%= @delivery.dly_name %></td>
 		</tr>
 		    <tr>
 		<th class="danger"  width="100">郵便番号</th>
 			<td><%= @delivery.dly_posnum %></td>
+			</tr>
+		    <tr>
 		<th class="danger">都道府県</th>
 		 <td><%= @delivery.dly_prefectures %></td>
+		 </tr>
+		    <tr>
 		 <th class="danger" width="80">市区町村</th>
 			<td><%= @delivery.dly_municipality %></td>
 		</tr>
 		<tr>
 			<th class="danger">番地以下</th>
-			<td colspan="5"><%= @delivery.dly_streetnum %></td>
+			<td><%= @delivery.dly_streetnum %></td>
 		</tr>
 		<tr>
 		<th class="danger">建物名</th>
@@ -39,15 +47,16 @@
 		</tr>
 	</tbody>
 </table>
-
+</div>
  <div class="panel-footer panel panel-danger"><%= link_to '新規お届け先設定', new_delivery_path %>｜ <%= link_to '変更', edit_delivery_path(@delivery) %>｜
  <%= link_to '削除', @delivery, method: :delete, data: { confirm: '本当に削除しますか？?' } %></div>
 </div>
        <h3>不足余剰品リスト</h3>
+       <div class="tables">        　
          <table class="table table-bordered">
         	<tbody>
         		<tr class="danger">
-        		    <th rowspan="2">配信物資番号</th>
+        		    <th rowspan="2">配信物資<br>番号</th>
         			<th rowspan="2">物資名</th>
         			<th colspan="2">希望物資</th>
         			<th colspan="2">不足品</th>
@@ -79,7 +88,8 @@
         		</tr>
         		<% end %>	
         	</tbody>
-        </table> 
+        </table>
+       </div> 
       <div class="col-sm-3 col-xs-6">
       <%= form_for(@supplyinfo , url: disasterinfo_supply_infos_path , method: :post) do |f| %>
 		　　<%= f.submit "支援物資情報を配信する ", class: "btn btn-large btn-primary" %>
